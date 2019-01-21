@@ -1,22 +1,10 @@
 #include "stm32l1xx_hal.h"
 #include "ssd1306.h"
 #include "gamesys.h"
-
-typedef struct Body{
-	int x;
-	int y;
-	void* draw;
-} body;
-
-typedef struct node* link;
-
-struct node{
-	body* item;
-	link next;
-};
+#include "gameobject.h"
 
 void vDrawItem(link gameItem){
-	gameItem->item->draw();
+
 }
 
 link lHead;
@@ -28,10 +16,11 @@ void vInitList(void){
 
 void vInitSys(void){
 	vInitList();
-
+	bodyNode player = vCreateObj();
 }
-void vUpdate(void){
 
+void vUpdate(void){
+	//handleEvents
 }
 
 void vDraw(void){

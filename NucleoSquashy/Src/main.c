@@ -194,7 +194,8 @@ int main(void)
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 
-  xTaskCreate( vTaskUpdate, "hello", 100, NULL, 0, NULL);
+  xTaskCreate( vTaskUpdate, "hello", 512, NULL, 0, NULL);
+  xTaskCreate( vTaskDraw, "hello", 512, NULL, 0, NULL);
   xTaskCreate( vTaskToggleLED, "Led", 10, NULL, 0, NULL);
   /* USER CODE END RTOS_THREADS */
 
