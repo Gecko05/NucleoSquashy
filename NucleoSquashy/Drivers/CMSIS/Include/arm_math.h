@@ -297,7 +297,6 @@
 #endif
 
 #define __CMSIS_GENERIC         /* disable NVIC and Systick functions */
-#define ARM_MATH_CM3
 
 #if defined(ARM_MATH_CM7)
   #include "core_cm7.h"
@@ -318,7 +317,6 @@
 #undef  __CMSIS_GENERIC         /* enable NVIC and Systick functions */
 #include "string.h"
 #include "math.h"
-#include "stdint.h"
 #ifdef   __cplusplus
 extern "C"
 {

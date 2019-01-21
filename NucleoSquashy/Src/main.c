@@ -54,7 +54,8 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "ssd1306.h"
+#include "gamesys.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -90,6 +91,38 @@ static void MX_I2C1_Init(void);
 void StartDefaultTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
+
+void vToggleLED(void){
+	HAL_GPIO_TogglePin(LD2_GPIO_Port, LD2_Pin);
+}
+
+void vTaskToggleLED(void *pvParameters){
+	const TickType_t xToggleDelay = 500 / portTICK_PERIOD_MS;
+	for( ;; ){
+		vToggleLED();
+		vTaskDelay(xToggleDelay);
+	}
+}
+
+/*	Update Task for calculations and I/O Management	*/
+
+void vTaskUpdate(void *pvParameters){
+	const TickType_t xUpDelay = 33.33 / portTICK_PERIOD_MS;
+	for( ;; ){
+		vTaskDelay(xUpDelay);
+		vUpdate();
+	}
+}
+
+/* Draw Task to update the screen */
+
+void vTaskDraw(void *pvParameters){
+	const TickType_t xUpDelay = 33.33 / portTICK_PERIOD_MS;
+		for( ;; ){
+			vTaskDelay(xUpDelay);
+			vDraw();
+		}
+}
 
 /* USER CODE END PFP */
 
@@ -129,7 +162,16 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
+  ssd1306_Init();
+  HAL_Delay(1000);
+  ssd1306_Fill(Black);
+  ssd1306_UpdateScreen();
+  HAL_Delay(1000);
 
+	ssd1306_SetCursor(23,23);
+	ssd1306_WriteString("Hola Chan", Font_11x18, White);
+
+	ssd1306_UpdateScreen();
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -151,6 +193,9 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+
+  xTaskCreate( vTaskUpdate, "hello", 100, NULL, 0, NULL);
+  xTaskCreate( vTaskToggleLED, "Led", 10, NULL, 0, NULL);
   /* USER CODE END RTOS_THREADS */
 
   /* USER CODE BEGIN RTOS_QUEUES */
