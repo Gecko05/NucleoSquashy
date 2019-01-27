@@ -121,6 +121,8 @@ void vTaskDraw(void *pvParameters){
 		for( ;; ){
 			vTaskDelay(xUpDelay);
 			vDraw();
+			ssd1306_DrawPixel(24,24, White);
+			ssd1306_UpdateScreen();
 		}
 }
 
@@ -169,9 +171,10 @@ int main(void)
   HAL_Delay(1000);
 
 	ssd1306_SetCursor(23,23);
-	ssd1306_WriteString("Hola Chan", Font_11x18, White);
-
+	//ssd1306_WriteString("1", Font_11x18, White);
 	ssd1306_UpdateScreen();
+	vInitSys();
+
   /* USER CODE END 2 */
 
   /* USER CODE BEGIN RTOS_MUTEX */
@@ -194,8 +197,8 @@ int main(void)
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 
-  xTaskCreate( vTaskUpdate, "hello", 512, NULL, 0, NULL);
-  xTaskCreate( vTaskDraw, "hello", 512, NULL, 0, NULL);
+  xTaskCreate( vTaskUpdate, "hello", 10, NULL, 0, NULL);
+  xTaskCreate( vTaskDraw, "hello", 10, NULL, 0, NULL);
   xTaskCreate( vTaskToggleLED, "Led", 10, NULL, 0, NULL);
   /* USER CODE END RTOS_THREADS */
 

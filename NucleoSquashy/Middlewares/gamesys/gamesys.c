@@ -2,9 +2,10 @@
 #include "ssd1306.h"
 #include "gamesys.h"
 #include "gameobject.h"
+#include "stdlib.h"
 
 void vDrawItem(link gameItem){
-
+	draw_sprite(10, 10, gameItem->item->sprite);
 }
 
 link lHead;
@@ -16,7 +17,15 @@ void vInitList(void){
 
 void vInitSys(void){
 	vInitList();
-	bodyNode player = vCreateObj();
+	playerBar.width = 7;
+	playerBar.height = 10;
+	playerBar.spriteContent = playerBarSprite;
+	bodyNode player1 = malloc(sizeof(*player1));
+	player1->sprite = playerBar;
+	player1->x = 10;
+	player1->y = 10;
+	lHead->item = player1;
+	//bodyNode player = vCreateObj();
 }
 
 void vUpdate(void){

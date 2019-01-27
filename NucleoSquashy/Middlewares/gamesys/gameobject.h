@@ -2,21 +2,21 @@
 #define GAMEOBJECT_H
 
 #include <stdint.h>
-typedef static const uint16_t* spriteArray_t;
+#include "sprites.h"
 typedef uint8_t coordinate_t;
 
-typedef struct Body* bodyNode;
+typedef struct body* bodyNode;
 
-typedef struct Body{
+typedef struct body{
 	coordinate_t x;
 	coordinate_t y;
-	spriteArray_t sprite;
-};
+	Sprite sprite;
+} Body;
 
 /*
  *	#######################################################
  */
 
-bodyNode vCreateObj(void);
+bodyNode vCreateObj(spriteArray spriteArray);
 
-#endif
+#endif // GAMEOBJECT_H

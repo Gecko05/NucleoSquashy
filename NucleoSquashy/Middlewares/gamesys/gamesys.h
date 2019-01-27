@@ -1,5 +1,5 @@
-#ifndef GAME_SYS_H
-#define GAME_SYS_H
+#ifndef GAMESYS_H
+#define GAMESYS_H
 #include "gameobject.h"
 
 typedef struct node* link;
@@ -13,4 +13,6 @@ void vUpdate(void);
 
 void vDraw(void);
 
-#endif
+void vInitSys(void);
+
+#endif // GAMESYS_H
