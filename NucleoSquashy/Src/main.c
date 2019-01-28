@@ -120,8 +120,8 @@ void vTaskDraw(void *pvParameters){
 	const TickType_t xUpDelay = 33.33 / portTICK_PERIOD_MS;
 		for( ;; ){
 			vTaskDelay(xUpDelay);
+			ssd1306_Fill(Black);
 			vDraw();
-			ssd1306_DrawPixel(24,24, White);
 			ssd1306_UpdateScreen();
 		}
 }
@@ -165,14 +165,12 @@ int main(void)
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
   ssd1306_Init();
-  HAL_Delay(1000);
   ssd1306_Fill(Black);
   ssd1306_UpdateScreen();
-  HAL_Delay(1000);
-
-	ssd1306_SetCursor(23,23);
-	//ssd1306_WriteString("1", Font_11x18, White);
+	ssd1306_SetCursor(1,23);
+	ssd1306_WriteString("Squashy 1.0", Font_11x18, White);
 	ssd1306_UpdateScreen();
+  HAL_Delay(3000);
 	vInitSys();
 
   /* USER CODE END 2 */
@@ -198,7 +196,7 @@ int main(void)
   /* add threads, ... */
 
   xTaskCreate( vTaskUpdate, "hello", 10, NULL, 0, NULL);
-  xTaskCreate( vTaskDraw, "hello", 10, NULL, 0, NULL);
+  xTaskCreate( vTaskDraw, "hello", 50, NULL, 0, NULL);
   xTaskCreate( vTaskToggleLED, "Led", 10, NULL, 0, NULL);
   /* USER CODE END RTOS_THREADS */
 

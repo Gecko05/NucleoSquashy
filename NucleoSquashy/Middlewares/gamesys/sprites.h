@@ -8,10 +8,10 @@ typedef const uint16_t* spriteArray;
 typedef struct sprite{
 	int8_t width;
 	int8_t height;
-	spriteArray spriteContent;
+	uint16_t *spriteContent;
 } Sprite;
 
-extern const spriteArray playerBarSprite;
+extern const uint16_t playerBarSprite[];
 
 extern Sprite playerBar;
 

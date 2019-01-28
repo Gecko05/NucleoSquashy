@@ -11,6 +11,7 @@ void vDrawItem(link gameItem){
 link lHead;
 
 void vInitList(void){
+	lHead = malloc(sizeof(*lHead));
 	lHead->item = NULL;
 	lHead->next = NULL;
 }
@@ -18,13 +19,14 @@ void vInitList(void){
 void vInitSys(void){
 	vInitList();
 	playerBar.width = 7;
-	playerBar.height = 10;
+	playerBar.height = 4;
 	playerBar.spriteContent = playerBarSprite;
 	bodyNode player1 = malloc(sizeof(*player1));
 	player1->sprite = playerBar;
 	player1->x = 10;
 	player1->y = 10;
 	lHead->item = player1;
+	lHead->next = NULL;
 	//bodyNode player = vCreateObj();
 }
 
@@ -37,6 +39,9 @@ void vDraw(void){
 	link gameItem = lHead;
 	while(gameItem->item != NULL){
 		vDrawItem(gameItem);
+		if(gameItem->next == NULL){
+			break;
+		}
 		gameItem = gameItem->next;
 	}
 	ssd1306_UpdateScreen();
