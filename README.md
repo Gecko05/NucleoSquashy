@@ -8,3 +8,5 @@ Simple Squashy game made for the Nucleo L152RE and SSD1306 using STM32 CubeMX
 * SSD1306 Display
 * Two pushbuttons
 * Piezo buzzer
+
+## Game
