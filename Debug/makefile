@@ -10,7 +10,8 @@ RM := rm -rf
 -include sources.mk
 -include startup/subdir.mk
 -include Src/subdir.mk
--include Middlewares/gamesys/subdir.mk
+-include Middlewares/Third_Party/Squashy/gamesys/subdir.mk
+-include Middlewares/Third_Party/Squashy/controls/subdir.mk
 -include Middlewares/Third_Party/SSD1306/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/subdir.mk
 -include Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/subdir.mk

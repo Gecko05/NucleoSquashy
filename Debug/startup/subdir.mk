@@ -15,7 +15,7 @@ startup/%.o: ../startup/%.s
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Assembler'
 	@echo $(PWD)
-	arm-none-eabi-as -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -g -o "$@" "$<"
+	arm-none-eabi-as -mcpu=cortex-m3 -mthumb -mfloat-abi=soft -I"/home/gecko/workspace/NucleoSquashy/Middlewares/Third_Party/Squashy/gamesys" -g -o "$@" "$<"
 	@echo 'Finished building: $<'
 	@echo ' '
 

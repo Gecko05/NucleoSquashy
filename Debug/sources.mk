@@ -21,7 +21,8 @@ Middlewares/Third_Party/FreeRTOS/Source \
 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3 \
 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang \
 Middlewares/Third_Party/SSD1306 \
-Middlewares/gamesys \
+Middlewares/Third_Party/Squashy/controls \
+Middlewares/Third_Party/Squashy/gamesys \
 Src \
 startup \
 

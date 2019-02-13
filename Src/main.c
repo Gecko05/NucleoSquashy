@@ -107,7 +107,7 @@ void vTaskToggleLED(void *pvParameters){
 /*	Update Task for calculations and I/O Management	*/
 
 void vTaskUpdate(void *pvParameters){
-	const TickType_t xUpDelay = 33.33 / portTICK_PERIOD_MS;
+	const TickType_t xUpDelay = 33 / portTICK_PERIOD_MS;
 	for( ;; ){
 		vTaskDelay(xUpDelay);
 		vUpdate();
@@ -117,15 +117,26 @@ void vTaskUpdate(void *pvParameters){
 /* Draw Task to update the screen */
 
 void vTaskDraw(void *pvParameters){
-	const TickType_t xUpDelay = 33.33 / portTICK_PERIOD_MS;
+	const TickType_t xUpDelay = 8 / portTICK_PERIOD_MS;
 		for( ;; ){
-			vTaskDelay(xUpDelay);
+			//vTaskDelay(xUpDelay);
 			ssd1306_Fill(Black);
 			vDraw();
 			ssd1306_UpdateScreen();
 		}
 }
 
+/* Init splash screen */
+
+void vInitSplash(void){
+  ssd1306_Init();
+  ssd1306_Fill(Black);
+  ssd1306_UpdateScreen();
+	ssd1306_SetCursor(1,23);
+	ssd1306_WriteString("Squashy 1.0", Font_11x18, White);
+	ssd1306_UpdateScreen();
+  HAL_Delay(3000);
+}
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -164,13 +175,7 @@ int main(void)
   MX_USART2_UART_Init();
   MX_I2C1_Init();
   /* USER CODE BEGIN 2 */
-  ssd1306_Init();
-  ssd1306_Fill(Black);
-  ssd1306_UpdateScreen();
-	ssd1306_SetCursor(1,23);
-	ssd1306_WriteString("Squashy 1.0", Font_11x18, White);
-	ssd1306_UpdateScreen();
-  HAL_Delay(3000);
+  vInitSplash();
 	vInitSys();
 
   /* USER CODE END 2 */
@@ -195,8 +200,8 @@ int main(void)
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 
-  xTaskCreate( vTaskUpdate, "hello", 10, NULL, 0, NULL);
-  xTaskCreate( vTaskDraw, "hello", 50, NULL, 0, NULL);
+  xTaskCreate( vTaskUpdate, "Update", 10, NULL, 0, NULL);
+  xTaskCreate( vTaskDraw, "Draw", 50, NULL, 0, NULL);
   xTaskCreate( vTaskToggleLED, "Led", 10, NULL, 0, NULL);
   /* USER CODE END RTOS_THREADS */
 
@@ -358,6 +363,18 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   GPIO_InitStruct.Speed = GPIO_SPEED_FREQ_LOW;
   HAL_GPIO_Init(LD2_GPIO_Port, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PA10 */
+  GPIO_InitStruct.Pin = GPIO_PIN_10;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOA, &GPIO_InitStruct);
+
+  /*Configure GPIO pin : PB3 */
+  GPIO_InitStruct.Pin = GPIO_PIN_3;
+  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
 }
 

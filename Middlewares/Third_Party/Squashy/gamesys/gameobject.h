@@ -1,13 +1,13 @@
 #ifndef GAMEOBJECT_H
 #define GAMEOBJECT_H
 
+#include "sprite_rendering.h"
 #include <stdint.h>
-#include "sprites.h"
 typedef uint8_t coordinate_t;
 
-typedef struct body* bodyNode;
+typedef struct body_t* BodyNode;
 
-typedef struct body{
+typedef struct body_t{
 	coordinate_t x;
 	coordinate_t y;
 	Sprite sprite;
@@ -17,6 +17,6 @@ typedef struct body{
  *	#######################################################
  */
 
-bodyNode vCreateObj(spriteArray spriteArray);
+BodyNode vCreateObj(spriteArray spriteArray);
 
 #endif // GAMEOBJECT_H

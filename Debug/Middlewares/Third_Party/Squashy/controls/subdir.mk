@@ -4,17 +4,17 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c 
+../Middlewares/Third_Party/Squashy/controls/controls.c 
 
 OBJS += \
-./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o 
+./Middlewares/Third_Party/Squashy/controls/controls.o 
 
 C_DEPS += \
-./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d 
+./Middlewares/Third_Party/Squashy/controls/controls.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/%.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/%.c
+Middlewares/Third_Party/Squashy/controls/%.o: ../Middlewares/Third_Party/Squashy/controls/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Compiler'
 	@echo $(PWD)

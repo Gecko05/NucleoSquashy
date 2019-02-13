@@ -14,6 +14,7 @@ typedef struct sprite{
 extern const uint16_t playerBarSprite[];
 
 extern Sprite playerBar;
+extern Sprite ball;
 
 void draw_sprite(uint8_t x, uint8_t y, Sprite spriteToDraw);
 

@@ -1,10 +1,11 @@
-#include "sprites.h"
+#include "sprite_rendering.h"
 
 const uint16_t playerBarSprite[] = {
-		0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF
+		0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF
 };
 
 Sprite playerBar;
+Sprite ball;
 
 void draw_sprite(uint8_t x, uint8_t y, Sprite spriteToDraw)
 {

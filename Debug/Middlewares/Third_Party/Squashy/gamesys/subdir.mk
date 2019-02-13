@@ -4,17 +4,23 @@
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS += \
-../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.c 
+../Middlewares/Third_Party/Squashy/gamesys/gameobject.c \
+../Middlewares/Third_Party/Squashy/gamesys/gamesys.c \
+../Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.c 
 
 OBJS += \
-./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o 
+./Middlewares/Third_Party/Squashy/gamesys/gameobject.o \
+./Middlewares/Third_Party/Squashy/gamesys/gamesys.o \
+./Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o 
 
 C_DEPS += \
-./Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.d 
+./Middlewares/Third_Party/Squashy/gamesys/gameobject.d \
+./Middlewares/Third_Party/Squashy/gamesys/gamesys.d \
+./Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.d 
 
 
 # Each subdirectory must supply rules for building sources it contributes
-Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/%.o: ../Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/%.c
+Middlewares/Third_Party/Squashy/gamesys/%.o: ../Middlewares/Third_Party/Squashy/gamesys/%.c
 	@echo 'Building file: $<'
 	@echo 'Invoking: MCU GCC Compiler'
 	@echo $(PWD)
