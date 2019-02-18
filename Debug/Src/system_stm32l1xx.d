@@ -22,6 +22,8 @@ Src/system_stm32l1xx.o: ../Src/system_stm32l1xx.c \
  /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_i2c.h \
  /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h \
  /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h \
+ /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h \
+ /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h \
  /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h
 
 /home/gecko/workspace/NucleoSquashy/Drivers/CMSIS/Device/ST/STM32L1xx/Include/stm32l1xx.h:
@@ -69,5 +71,9 @@ Src/system_stm32l1xx.o: ../Src/system_stm32l1xx.c \
 /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr.h:
 
 /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_pwr_ex.h:
+
+/home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim.h:
+
+/home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_tim_ex.h:
 
 /home/gecko/workspace/NucleoSquashy/Drivers/STM32L1xx_HAL_Driver/Inc/stm32l1xx_hal_uart.h:

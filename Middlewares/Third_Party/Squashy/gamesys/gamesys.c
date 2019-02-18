@@ -1,11 +1,26 @@
 #include "gamesys.h"
 
+Link lHead;
+int gameover = 0;
+int score = 0;
+extern TIM_HandleTypeDef htim3;
+
+void displayScore(void){
+	ssd1306_SetCursor(1,1);
+	char scoreString[4];
+	itoa(score, scoreString, 10);
+	ssd1306_WriteString(scoreString, Font_11x18, White);
+}
+
+void displayGameOverScreen(void){
+	ssd1306_Fill(Black);
+	ssd1306_SetCursor(2,23);
+	ssd1306_WriteString(" Game Over", Font_11x18, White);
+}
+
 void vDrawItem(Link gameItem){
 	draw_sprite(gameItem->item->x, gameItem->item->y, gameItem->item->sprite);
 }
-
-Link lHead;
-int gameover = 0;
 
 void vInitList(void){
 	lHead = NULL;
@@ -26,7 +41,7 @@ void vInitSys(void){
 	player1 = malloc(sizeof(*player1));
 	player1->sprite = playerBar;
 	player1->x = 56;
-	player1->y = 50;
+	player1->y = 55;
 	appendToGameList(player1);
 
 	ball.width = 4;
@@ -46,15 +61,22 @@ void vUpdate(void){
 	static int bally = 0;
 
 	if (gameover){
+		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10) == GPIO_PIN_SET &&
+				HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == GPIO_PIN_SET){
+			  gameover = 0;
+			  ballx = 60;
+			  bally = 10;
+		}
 		return;
 	}
-	if (abs(ball1->x - player1->x) <= player1->sprite.width){
+	if (((ball1->x - player1->x) <= player1->sprite.width) && ((ball1->x - player1->x) > -ball1->sprite.width) && !bally){
 		if (abs(ball1->y - player1->y) <= player1->sprite.height){
 			bally = 1;
+			score++;
 		}
 	}
 
-	if (!ballx && (ball1->x < 128)){
+	if (!ballx && (ball1->x < (128 - ball1->sprite.width))){
 		ball1->x++;
 	}
 	else{
@@ -71,7 +93,6 @@ void vUpdate(void){
 		ball1->y++;
 	}
 	else if (ball1->y >= 60){
-		//game over
 		gameover = 1;
 	}
 	if (bally && (ball1->y > 0)){
@@ -91,21 +112,23 @@ void vUpdate(void){
 }
 
 void vDraw(void){
-	/* Traverse the list to draw all items in the list */
 	if (gameover){
+		displayGameOverScreen();
+	}
+	else{
+		/* Traverse the list to draw all items in the list */
 		ssd1306_Fill(Black);
-		ssd1306_SetCursor(1,23);
-		ssd1306_WriteString("Game Over:(", Font_11x18, White);
-		ssd1306_UpdateScreen();
-		return;
-	}
-	Link gameItem = lHead;
-	while(gameItem->item != NULL){
-		vDrawItem(gameItem);
-		if(gameItem->next == NULL){
-			break;
+		displayScore();
+		Link gameItem = lHead;
+		while(gameItem->item != NULL){
+			vDrawItem(gameItem);
+			if(gameItem->next == NULL){
+				break;
+			}
+			gameItem = gameItem->next;
 		}
-		gameItem = gameItem->next;
 	}
+  // Update screen with draw changes
 	ssd1306_UpdateScreen();
+
 }
