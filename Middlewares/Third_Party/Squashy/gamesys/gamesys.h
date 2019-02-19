@@ -21,6 +21,8 @@ void vDraw(void);
 
 void vUpdate(void);
 
+void vOutputAudio(void);
+
 void vInitSys(void);
 
 #endif // GAMESYS_H

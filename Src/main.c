@@ -127,6 +127,16 @@ void vTaskDraw(void *pvParameters){
 		}
 }
 
+/* Do sounds */
+
+void vTaskAudio(void *pvParameters){
+	const TickType_t xToggleDelay = 33 / portTICK_PERIOD_MS;
+	for( ;; ){
+		vOutputAudio();
+		vTaskDelay(xToggleDelay);
+	}
+}
+
 /* Init splash screen */
 
 void vInitSplash(void){
@@ -213,8 +223,9 @@ int main(void)
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
 
-  xTaskCreate( vTaskUpdate, "Update", 10, NULL, 0, NULL);
-  xTaskCreate( vTaskDraw, "Draw", 50, NULL, 0, NULL);
+  xTaskCreate( vTaskUpdate, "Update", 10, NULL, 1, NULL);
+  xTaskCreate( vTaskDraw, "Draw", 50, NULL, 1, NULL);
+  xTaskCreate( vTaskAudio, "Audio", 10, NULL, 0, NULL);
   xTaskCreate( vTaskToggleLED, "Led", 10, NULL, 0, NULL);
   /* USER CODE END RTOS_THREADS */
 

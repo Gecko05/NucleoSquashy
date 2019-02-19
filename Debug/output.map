@@ -2017,8 +2017,6 @@ Discarded input sections
                 0x0000000000000000        0x2 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
  .text.HAL_TIM_PWM_DeInit
                 0x0000000000000000       0x30 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
- .text.HAL_TIM_PWM_Start
-                0x0000000000000000       0x1a Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
  .text.HAL_TIM_PWM_Start_IT
                 0x0000000000000000       0x5e Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
  .text.HAL_TIM_PWM_Stop_IT
@@ -3761,7 +3759,6 @@ Discarded input sections
  .group         0x0000000000000000        0xc Middlewares/Third_Party/Squashy/gamesys/gamesys.o
  .group         0x0000000000000000        0xc Middlewares/Third_Party/Squashy/gamesys/gamesys.o
  .text          0x0000000000000000        0x0 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
- .data          0x0000000000000000        0x0 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
  .debug_macro   0x0000000000000000      0xa60 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
  .debug_macro   0x0000000000000000       0x94 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
  .debug_macro   0x0000000000000000       0x2e Middlewares/Third_Party/Squashy/gamesys/gamesys.o
@@ -4792,7 +4789,7 @@ LOAD /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.l
                 0x0000000008000000                g_pfnVectors
                 0x000000000800013c                . = ALIGN (0x4)
 
-.text           0x0000000008000140     0x340c
+.text           0x0000000008000140     0x34c8
                 0x0000000008000140                . = ALIGN (0x4)
  *(.text)
  .text          0x0000000008000140       0x40 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
@@ -4889,423 +4886,433 @@ LOAD /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.l
  .text.HAL_TIM_PWM_Init
                 0x00000000080016d6       0x32 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
                 0x00000000080016d6                HAL_TIM_PWM_Init
+ .text.HAL_TIM_PWM_Start
+                0x0000000008001708       0x1a Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
+                0x0000000008001708                HAL_TIM_PWM_Start
  .text.HAL_TIM_PWM_Stop
-                0x0000000008001708       0x2a Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
-                0x0000000008001708                HAL_TIM_PWM_Stop
+                0x0000000008001722       0x2a Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
+                0x0000000008001722                HAL_TIM_PWM_Stop
  .text.HAL_TIM_PWM_ConfigChannel
-                0x0000000008001732       0xdc Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
-                0x0000000008001732                HAL_TIM_PWM_ConfigChannel
+                0x000000000800174c       0xdc Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim.o
+                0x000000000800174c                HAL_TIM_PWM_ConfigChannel
  .text.HAL_TIMEx_MasterConfigSynchronization
-                0x000000000800180e       0x52 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o
-                0x000000000800180e                HAL_TIMEx_MasterConfigSynchronization
+                0x0000000008001828       0x52 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_tim_ex.o
+                0x0000000008001828                HAL_TIMEx_MasterConfigSynchronization
+ *fill*         0x000000000800187a        0x2 
  .text.UART_SetConfig
-                0x0000000008001860      0x320 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o
+                0x000000000800187c      0x320 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o
  .text.HAL_UART_Init
-                0x0000000008001b80       0x5a Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o
-                0x0000000008001b80                HAL_UART_Init
+                0x0000000008001b9c       0x5a Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_uart.o
+                0x0000000008001b9c                HAL_UART_Init
  .text.makeFreeRtosPriority
-                0x0000000008001bda        0xc Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+                0x0000000008001bf6        0xc Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
  .text.osKernelStart
-                0x0000000008001be6        0xa Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
-                0x0000000008001be6                osKernelStart
+                0x0000000008001c02        0xa Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+                0x0000000008001c02                osKernelStart
  .text.osThreadCreate
-                0x0000000008001bf0       0x34 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
-                0x0000000008001bf0                osThreadCreate
- .text.osDelay  0x0000000008001c24       0x12 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
-                0x0000000008001c24                osDelay
+                0x0000000008001c0c       0x34 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+                0x0000000008001c0c                osThreadCreate
+ .text.osDelay  0x0000000008001c40       0x12 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+                0x0000000008001c40                osDelay
  .text.osSystickHandler
-                0x0000000008001c36       0x10 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
-                0x0000000008001c36                osSystickHandler
+                0x0000000008001c52       0x10 Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.o
+                0x0000000008001c52                osSystickHandler
  .text.vListInitialise
-                0x0000000008001c46       0x16 Middlewares/Third_Party/FreeRTOS/Source/list.o
-                0x0000000008001c46                vListInitialise
+                0x0000000008001c62       0x16 Middlewares/Third_Party/FreeRTOS/Source/list.o
+                0x0000000008001c62                vListInitialise
  .text.vListInitialiseItem
-                0x0000000008001c5c        0x6 Middlewares/Third_Party/FreeRTOS/Source/list.o
-                0x0000000008001c5c                vListInitialiseItem
+                0x0000000008001c78        0x6 Middlewares/Third_Party/FreeRTOS/Source/list.o
+                0x0000000008001c78                vListInitialiseItem
  .text.vListInsertEnd
-                0x0000000008001c62       0x18 Middlewares/Third_Party/FreeRTOS/Source/list.o
-                0x0000000008001c62                vListInsertEnd
+                0x0000000008001c7e       0x18 Middlewares/Third_Party/FreeRTOS/Source/list.o
+                0x0000000008001c7e                vListInsertEnd
  .text.vListInsert
-                0x0000000008001c7a       0x34 Middlewares/Third_Party/FreeRTOS/Source/list.o
-                0x0000000008001c7a                vListInsert
+                0x0000000008001c96       0x34 Middlewares/Third_Party/FreeRTOS/Source/list.o
+                0x0000000008001c96                vListInsert
  .text.uxListRemove
-                0x0000000008001cae       0x26 Middlewares/Third_Party/FreeRTOS/Source/list.o
-                0x0000000008001cae                uxListRemove
+                0x0000000008001cca       0x26 Middlewares/Third_Party/FreeRTOS/Source/list.o
+                0x0000000008001cca                uxListRemove
  .text.prvResetNextTaskUnblockTime
-                0x0000000008001cd4       0x24 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008001cf0       0x24 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .text.prvDeleteTCB
-                0x0000000008001cf8       0x12 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008001d14       0x12 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .text.prvInitialiseNewTask
-                0x0000000008001d0a       0x80 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- *fill*         0x0000000008001d8a        0x2 
+                0x0000000008001d26       0x80 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ *fill*         0x0000000008001da6        0x2 
  .text.prvInitialiseTaskLists
-                0x0000000008001d8c       0x58 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008001da8       0x58 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .text.prvAddNewTaskToReadyList
-                0x0000000008001de4       0xac Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008001e00       0xac Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .text.prvAddCurrentTaskToDelayedList
-                0x0000000008001e90       0x88 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008001eac       0x88 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .text.xTaskCreate
-                0x0000000008001f18       0x62 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x0000000008001f18                xTaskCreate
- *fill*         0x0000000008001f7a        0x2 
+                0x0000000008001f34       0x62 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008001f34                xTaskCreate
+ *fill*         0x0000000008001f96        0x2 
  .text.vTaskStartScheduler
-                0x0000000008001f7c       0x74 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x0000000008001f7c                vTaskStartScheduler
+                0x0000000008001f98       0x74 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008001f98                vTaskStartScheduler
  .text.vTaskSuspendAll
-                0x0000000008001ff0       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x0000000008001ff0                vTaskSuspendAll
+                0x000000000800200c       0x14 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x000000000800200c                vTaskSuspendAll
  .text.xTaskIncrementTick
-                0x0000000008002004      0x10c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x0000000008002004                xTaskIncrementTick
+                0x0000000008002020      0x10c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008002020                xTaskIncrementTick
  .text.xTaskResumeAll
-                0x0000000008002110       0xf0 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x0000000008002110                xTaskResumeAll
+                0x000000000800212c       0xf0 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x000000000800212c                xTaskResumeAll
  .text.vTaskDelay
-                0x0000000008002200       0x4c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x0000000008002200                vTaskDelay
+                0x000000000800221c       0x4c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x000000000800221c                vTaskDelay
  .text.prvCheckTasksWaitingTermination
-                0x000000000800224c       0x54 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008002268       0x54 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .text.prvIdleTask
-                0x00000000080022a0       0x28 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x00000000080022bc       0x28 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
  .text.vTaskSwitchContext
-                0x00000000080022c8       0x90 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x00000000080022c8                vTaskSwitchContext
+                0x00000000080022e4       0x90 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x00000000080022e4                vTaskSwitchContext
  .text.xTaskGetSchedulerState
-                0x0000000008002358       0x20 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x0000000008002358                xTaskGetSchedulerState
+                0x0000000008002374       0x20 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x0000000008002374                xTaskGetSchedulerState
  .text.prvTaskExitError
-                0x0000000008002378       0x34 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000008002394       0x34 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .text.prvPortStartFirstTask
-                0x00000000080023ac       0x20 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000080023c8       0x20 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .text.pxPortInitialiseStack
-                0x00000000080023cc       0x24 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x00000000080023cc                pxPortInitialiseStack
+                0x00000000080023e8       0x24 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000080023e8                pxPortInitialiseStack
+ *fill*         0x000000000800240c        0x4 
  .text.SVC_Handler
-                0x00000000080023f0       0x24 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x00000000080023f0                SVC_Handler
+                0x0000000008002410       0x24 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000008002410                SVC_Handler
  .text.vPortEnterCritical
-                0x0000000008002414       0x44 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000008002414                vPortEnterCritical
+                0x0000000008002434       0x44 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000008002434                vPortEnterCritical
  .text.vPortExitCritical
-                0x0000000008002458       0x2c Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000008002458                vPortExitCritical
- *fill*         0x0000000008002484        0xc 
+                0x0000000008002478       0x2c Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000008002478                vPortExitCritical
+ *fill*         0x00000000080024a4        0xc 
  .text.PendSV_Handler
-                0x0000000008002490       0x44 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000008002490                PendSV_Handler
+                0x00000000080024b0       0x44 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000080024b0                PendSV_Handler
  .text.xPortSysTickHandler
-                0x00000000080024d4       0x2c Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x00000000080024d4                xPortSysTickHandler
+                0x00000000080024f4       0x2c Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x00000000080024f4                xPortSysTickHandler
  .text.vPortSetupTimerInterrupt
-                0x0000000008002500       0x2c Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x0000000008002500                vPortSetupTimerInterrupt
+                0x0000000008002520       0x2c Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x0000000008002520                vPortSetupTimerInterrupt
  .text.xPortStartScheduler
-                0x000000000800252c       0x90 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
-                0x000000000800252c                xPortStartScheduler
+                0x000000000800254c       0x90 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+                0x000000000800254c                xPortStartScheduler
  .text.prvHeapInit
-                0x00000000080025bc       0x54 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x00000000080025dc       0x54 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .text.prvInsertBlockIntoFreeList
-                0x0000000008002610       0x58 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000008002630       0x58 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .text.pvPortMalloc
-                0x0000000008002668      0x10c Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
-                0x0000000008002668                pvPortMalloc
+                0x0000000008002688      0x10c Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000008002688                pvPortMalloc
  .text.vPortFree
-                0x0000000008002774       0x70 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
-                0x0000000008002774                vPortFree
+                0x0000000008002794       0x70 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+                0x0000000008002794                vPortFree
  .text.ssd1306_WriteCommand
-                0x00000000080027e4       0x28 Middlewares/Third_Party/SSD1306/ssd1306.o
+                0x0000000008002804       0x28 Middlewares/Third_Party/SSD1306/ssd1306.o
  .text.ssd1306_Fill
-                0x000000000800280c       0x20 Middlewares/Third_Party/SSD1306/ssd1306.o
-                0x000000000800280c                ssd1306_Fill
+                0x000000000800282c       0x20 Middlewares/Third_Party/SSD1306/ssd1306.o
+                0x000000000800282c                ssd1306_Fill
  .text.ssd1306_UpdateScreen
-                0x000000000800282c       0x50 Middlewares/Third_Party/SSD1306/ssd1306.o
-                0x000000000800282c                ssd1306_UpdateScreen
+                0x000000000800284c       0x50 Middlewares/Third_Party/SSD1306/ssd1306.o
+                0x000000000800284c                ssd1306_UpdateScreen
  .text.ssd1306_Init
-                0x000000000800287c       0xd4 Middlewares/Third_Party/SSD1306/ssd1306.o
-                0x000000000800287c                ssd1306_Init
+                0x000000000800289c       0xd4 Middlewares/Third_Party/SSD1306/ssd1306.o
+                0x000000000800289c                ssd1306_Init
  .text.ssd1306_DrawPixel
-                0x0000000008002950       0x54 Middlewares/Third_Party/SSD1306/ssd1306.o
-                0x0000000008002950                ssd1306_DrawPixel
+                0x0000000008002970       0x54 Middlewares/Third_Party/SSD1306/ssd1306.o
+                0x0000000008002970                ssd1306_DrawPixel
  .text.ssd1306_WriteChar
-                0x00000000080029a4       0xb4 Middlewares/Third_Party/SSD1306/ssd1306.o
-                0x00000000080029a4                ssd1306_WriteChar
+                0x00000000080029c4       0xb4 Middlewares/Third_Party/SSD1306/ssd1306.o
+                0x00000000080029c4                ssd1306_WriteChar
  .text.ssd1306_WriteString
-                0x0000000008002a58       0x30 Middlewares/Third_Party/SSD1306/ssd1306.o
-                0x0000000008002a58                ssd1306_WriteString
+                0x0000000008002a78       0x30 Middlewares/Third_Party/SSD1306/ssd1306.o
+                0x0000000008002a78                ssd1306_WriteString
  .text.ssd1306_SetCursor
-                0x0000000008002a88       0x10 Middlewares/Third_Party/SSD1306/ssd1306.o
-                0x0000000008002a88                ssd1306_SetCursor
+                0x0000000008002aa8       0x10 Middlewares/Third_Party/SSD1306/ssd1306.o
+                0x0000000008002aa8                ssd1306_SetCursor
  .text.displayScore
-                0x0000000008002a98       0x34 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000008002a98                displayScore
+                0x0000000008002ab8       0x34 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002ab8                displayScore
  .text.displayGameOverScreen
-                0x0000000008002acc       0x28 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000008002acc                displayGameOverScreen
- .text.vDrawItem
-                0x0000000008002af4       0x14 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000008002af4                vDrawItem
+                0x0000000008002aec       0x28 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002aec                displayGameOverScreen
+ .text.vOutputAudio
+                0x0000000008002b14       0x34 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002b14                vOutputAudio
+ .text.drawItem
+                0x0000000008002b48       0x14 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002b48                drawItem
  .text.vInitList
-                0x0000000008002b08        0xc Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000008002b08                vInitList
+                0x0000000008002b5c        0xc Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002b5c                vInitList
  .text.appendToGameList
-                0x0000000008002b14       0x1c Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000008002b14                appendToGameList
+                0x0000000008002b68       0x1c Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002b68                appendToGameList
  .text.vInitSys
-                0x0000000008002b30       0x7c Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000008002b30                vInitSys
- .text.vUpdate  0x0000000008002bac      0x148 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000008002bac                vUpdate
- .text.vDraw    0x0000000008002cf4       0x3c Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000008002cf4                vDraw
+                0x0000000008002b84       0x7c Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002b84                vInitSys
+ .text.vUpdate  0x0000000008002c00      0x18c Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002c00                vUpdate
+ .text.vDraw    0x0000000008002d8c       0x3c Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000008002d8c                vDraw
  .text.draw_sprite
-                0x0000000008002d30       0x5a Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
-                0x0000000008002d30                draw_sprite
+                0x0000000008002dc8       0x5a Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+                0x0000000008002dc8                draw_sprite
  .text.vTaskUpdate
-                0x0000000008002d8a        0xe Src/main.o
-                0x0000000008002d8a                vTaskUpdate
+                0x0000000008002e22        0xe Src/main.o
+                0x0000000008002e22                vTaskUpdate
  .text.vTaskDraw
-                0x0000000008002d98        0xe Src/main.o
-                0x0000000008002d98                vTaskDraw
- *fill*         0x0000000008002da6        0x2 
+                0x0000000008002e30        0xe Src/main.o
+                0x0000000008002e30                vTaskDraw
+ .text.vTaskAudio
+                0x0000000008002e3e        0xe Src/main.o
+                0x0000000008002e3e                vTaskAudio
  .text.MX_GPIO_Init
-                0x0000000008002da8       0xcc Src/main.o
+                0x0000000008002e4c       0xcc Src/main.o
  .text.MX_USART2_UART_Init
-                0x0000000008002e74       0x2c Src/main.o
+                0x0000000008002f18       0x2c Src/main.o
  .text.MX_I2C1_Init
-                0x0000000008002ea0       0x34 Src/main.o
+                0x0000000008002f44       0x34 Src/main.o
  .text.MX_TIM3_Init
-                0x0000000008002ed4       0x60 Src/main.o
+                0x0000000008002f78       0x60 Src/main.o
  .text.StartDefaultTask
-                0x0000000008002f34        0xa Src/main.o
-                0x0000000008002f34                StartDefaultTask
- *fill*         0x0000000008002f3e        0x2 
+                0x0000000008002fd8        0xa Src/main.o
+                0x0000000008002fd8                StartDefaultTask
+ *fill*         0x0000000008002fe2        0x2 
  .text.vToggleLED
-                0x0000000008002f40       0x10 Src/main.o
-                0x0000000008002f40                vToggleLED
+                0x0000000008002fe4       0x10 Src/main.o
+                0x0000000008002fe4                vToggleLED
  .text.vTaskToggleLED
-                0x0000000008002f50       0x10 Src/main.o
-                0x0000000008002f50                vTaskToggleLED
+                0x0000000008002ff4       0x10 Src/main.o
+                0x0000000008002ff4                vTaskToggleLED
  .text.vInitSplash
-                0x0000000008002f60       0x3c Src/main.o
-                0x0000000008002f60                vInitSplash
+                0x0000000008003004       0x3c Src/main.o
+                0x0000000008003004                vInitSplash
  .text.user_pwm_setvalue
-                0x0000000008002f9c       0x24 Src/main.o
-                0x0000000008002f9c                user_pwm_setvalue
+                0x0000000008003040       0x24 Src/main.o
+                0x0000000008003040                user_pwm_setvalue
  .text.SystemClock_Config
-                0x0000000008002fc0       0x68 Src/main.o
-                0x0000000008002fc0                SystemClock_Config
- .text.main     0x0000000008003028       0xa8 Src/main.o
-                0x0000000008003028                main
+                0x0000000008003064       0x68 Src/main.o
+                0x0000000008003064                SystemClock_Config
+ .text.main     0x00000000080030cc       0xc0 Src/main.o
+                0x00000000080030cc                main
  .text.HAL_MspInit
-                0x00000000080030d0       0x54 Src/stm32l1xx_hal_msp.o
-                0x00000000080030d0                HAL_MspInit
+                0x000000000800318c       0x54 Src/stm32l1xx_hal_msp.o
+                0x000000000800318c                HAL_MspInit
  .text.HAL_I2C_MspInit
-                0x0000000008003124       0x70 Src/stm32l1xx_hal_msp.o
-                0x0000000008003124                HAL_I2C_MspInit
+                0x00000000080031e0       0x70 Src/stm32l1xx_hal_msp.o
+                0x00000000080031e0                HAL_I2C_MspInit
  .text.HAL_TIM_PWM_MspInit
-                0x0000000008003194       0x2c Src/stm32l1xx_hal_msp.o
-                0x0000000008003194                HAL_TIM_PWM_MspInit
+                0x0000000008003250       0x2c Src/stm32l1xx_hal_msp.o
+                0x0000000008003250                HAL_TIM_PWM_MspInit
  .text.HAL_TIM_MspPostInit
-                0x00000000080031c0       0x50 Src/stm32l1xx_hal_msp.o
-                0x00000000080031c0                HAL_TIM_MspPostInit
+                0x000000000800327c       0x50 Src/stm32l1xx_hal_msp.o
+                0x000000000800327c                HAL_TIM_MspPostInit
  .text.HAL_UART_MspInit
-                0x0000000008003210       0x6c Src/stm32l1xx_hal_msp.o
-                0x0000000008003210                HAL_UART_MspInit
+                0x00000000080032cc       0x6c Src/stm32l1xx_hal_msp.o
+                0x00000000080032cc                HAL_UART_MspInit
  .text.NMI_Handler
-                0x000000000800327c        0x2 Src/stm32l1xx_it.o
-                0x000000000800327c                NMI_Handler
+                0x0000000008003338        0x2 Src/stm32l1xx_it.o
+                0x0000000008003338                NMI_Handler
  .text.HardFault_Handler
-                0x000000000800327e        0x2 Src/stm32l1xx_it.o
-                0x000000000800327e                HardFault_Handler
+                0x000000000800333a        0x2 Src/stm32l1xx_it.o
+                0x000000000800333a                HardFault_Handler
  .text.MemManage_Handler
-                0x0000000008003280        0x2 Src/stm32l1xx_it.o
-                0x0000000008003280                MemManage_Handler
+                0x000000000800333c        0x2 Src/stm32l1xx_it.o
+                0x000000000800333c                MemManage_Handler
  .text.BusFault_Handler
-                0x0000000008003282        0x2 Src/stm32l1xx_it.o
-                0x0000000008003282                BusFault_Handler
+                0x000000000800333e        0x2 Src/stm32l1xx_it.o
+                0x000000000800333e                BusFault_Handler
  .text.UsageFault_Handler
-                0x0000000008003284        0x2 Src/stm32l1xx_it.o
-                0x0000000008003284                UsageFault_Handler
+                0x0000000008003340        0x2 Src/stm32l1xx_it.o
+                0x0000000008003340                UsageFault_Handler
  .text.DebugMon_Handler
-                0x0000000008003286        0x2 Src/stm32l1xx_it.o
-                0x0000000008003286                DebugMon_Handler
+                0x0000000008003342        0x2 Src/stm32l1xx_it.o
+                0x0000000008003342                DebugMon_Handler
  .text.SysTick_Handler
-                0x0000000008003288        0xc Src/stm32l1xx_it.o
-                0x0000000008003288                SysTick_Handler
+                0x0000000008003344        0xc Src/stm32l1xx_it.o
+                0x0000000008003344                SysTick_Handler
  .text.SystemInit
-                0x0000000008003294       0x48 Src/system_stm32l1xx.o
-                0x0000000008003294                SystemInit
+                0x0000000008003350       0x48 Src/system_stm32l1xx.o
+                0x0000000008003350                SystemInit
  .text.Reset_Handler
-                0x00000000080032dc       0x48 startup/startup_stm32l152xe.o
-                0x00000000080032dc                Reset_Handler
+                0x0000000008003398       0x48 startup/startup_stm32l152xe.o
+                0x0000000008003398                Reset_Handler
  .text.Default_Handler
-                0x0000000008003324        0x2 startup/startup_stm32l152xe.o
-                0x0000000008003324                RTC_Alarm_IRQHandler
-                0x0000000008003324                EXTI2_IRQHandler
-                0x0000000008003324                COMP_ACQ_IRQHandler
-                0x0000000008003324                TIM10_IRQHandler
-                0x0000000008003324                USB_HP_IRQHandler
-                0x0000000008003324                TIM6_IRQHandler
-                0x0000000008003324                PVD_IRQHandler
-                0x0000000008003324                EXTI3_IRQHandler
-                0x0000000008003324                EXTI0_IRQHandler
-                0x0000000008003324                I2C2_EV_IRQHandler
-                0x0000000008003324                SPI1_IRQHandler
-                0x0000000008003324                USB_FS_WKUP_IRQHandler
-                0x0000000008003324                DMA2_Channel2_IRQHandler
-                0x0000000008003324                DMA1_Channel4_IRQHandler
-                0x0000000008003324                ADC1_IRQHandler
-                0x0000000008003324                USART3_IRQHandler
-                0x0000000008003324                DMA1_Channel7_IRQHandler
-                0x0000000008003324                LCD_IRQHandler
-                0x0000000008003324                UART5_IRQHandler
-                0x0000000008003324                TIM4_IRQHandler
-                0x0000000008003324                DMA2_Channel1_IRQHandler
-                0x0000000008003324                I2C1_EV_IRQHandler
-                0x0000000008003324                DMA1_Channel6_IRQHandler
-                0x0000000008003324                UART4_IRQHandler
-                0x0000000008003324                DMA2_Channel4_IRQHandler
-                0x0000000008003324                TIM3_IRQHandler
-                0x0000000008003324                RCC_IRQHandler
-                0x0000000008003324                DMA1_Channel1_IRQHandler
-                0x0000000008003324                Default_Handler
-                0x0000000008003324                EXTI15_10_IRQHandler
-                0x0000000008003324                TIM7_IRQHandler
-                0x0000000008003324                TIM5_IRQHandler
-                0x0000000008003324                EXTI9_5_IRQHandler
-                0x0000000008003324                TIM9_IRQHandler
-                0x0000000008003324                TAMPER_STAMP_IRQHandler
-                0x0000000008003324                RTC_WKUP_IRQHandler
-                0x0000000008003324                SPI2_IRQHandler
-                0x0000000008003324                DMA2_Channel5_IRQHandler
-                0x0000000008003324                DMA1_Channel5_IRQHandler
-                0x0000000008003324                USB_LP_IRQHandler
-                0x0000000008003324                EXTI4_IRQHandler
-                0x0000000008003324                DMA1_Channel3_IRQHandler
-                0x0000000008003324                COMP_IRQHandler
-                0x0000000008003324                WWDG_IRQHandler
-                0x0000000008003324                TIM2_IRQHandler
-                0x0000000008003324                DAC_IRQHandler
-                0x0000000008003324                EXTI1_IRQHandler
-                0x0000000008003324                TIM11_IRQHandler
-                0x0000000008003324                USART2_IRQHandler
-                0x0000000008003324                I2C2_ER_IRQHandler
-                0x0000000008003324                DMA1_Channel2_IRQHandler
-                0x0000000008003324                FLASH_IRQHandler
-                0x0000000008003324                USART1_IRQHandler
-                0x0000000008003324                SPI3_IRQHandler
-                0x0000000008003324                I2C1_ER_IRQHandler
-                0x0000000008003324                DMA2_Channel3_IRQHandler
- *fill*         0x0000000008003326        0x2 
+                0x00000000080033e0        0x2 startup/startup_stm32l152xe.o
+                0x00000000080033e0                RTC_Alarm_IRQHandler
+                0x00000000080033e0                EXTI2_IRQHandler
+                0x00000000080033e0                COMP_ACQ_IRQHandler
+                0x00000000080033e0                TIM10_IRQHandler
+                0x00000000080033e0                USB_HP_IRQHandler
+                0x00000000080033e0                TIM6_IRQHandler
+                0x00000000080033e0                PVD_IRQHandler
+                0x00000000080033e0                EXTI3_IRQHandler
+                0x00000000080033e0                EXTI0_IRQHandler
+                0x00000000080033e0                I2C2_EV_IRQHandler
+                0x00000000080033e0                SPI1_IRQHandler
+                0x00000000080033e0                USB_FS_WKUP_IRQHandler
+                0x00000000080033e0                DMA2_Channel2_IRQHandler
+                0x00000000080033e0                DMA1_Channel4_IRQHandler
+                0x00000000080033e0                ADC1_IRQHandler
+                0x00000000080033e0                USART3_IRQHandler
+                0x00000000080033e0                DMA1_Channel7_IRQHandler
+                0x00000000080033e0                LCD_IRQHandler
+                0x00000000080033e0                UART5_IRQHandler
+                0x00000000080033e0                TIM4_IRQHandler
+                0x00000000080033e0                DMA2_Channel1_IRQHandler
+                0x00000000080033e0                I2C1_EV_IRQHandler
+                0x00000000080033e0                DMA1_Channel6_IRQHandler
+                0x00000000080033e0                UART4_IRQHandler
+                0x00000000080033e0                DMA2_Channel4_IRQHandler
+                0x00000000080033e0                TIM3_IRQHandler
+                0x00000000080033e0                RCC_IRQHandler
+                0x00000000080033e0                DMA1_Channel1_IRQHandler
+                0x00000000080033e0                Default_Handler
+                0x00000000080033e0                EXTI15_10_IRQHandler
+                0x00000000080033e0                TIM7_IRQHandler
+                0x00000000080033e0                TIM5_IRQHandler
+                0x00000000080033e0                EXTI9_5_IRQHandler
+                0x00000000080033e0                TIM9_IRQHandler
+                0x00000000080033e0                TAMPER_STAMP_IRQHandler
+                0x00000000080033e0                RTC_WKUP_IRQHandler
+                0x00000000080033e0                SPI2_IRQHandler
+                0x00000000080033e0                DMA2_Channel5_IRQHandler
+                0x00000000080033e0                DMA1_Channel5_IRQHandler
+                0x00000000080033e0                USB_LP_IRQHandler
+                0x00000000080033e0                EXTI4_IRQHandler
+                0x00000000080033e0                DMA1_Channel3_IRQHandler
+                0x00000000080033e0                COMP_IRQHandler
+                0x00000000080033e0                WWDG_IRQHandler
+                0x00000000080033e0                TIM2_IRQHandler
+                0x00000000080033e0                DAC_IRQHandler
+                0x00000000080033e0                EXTI1_IRQHandler
+                0x00000000080033e0                TIM11_IRQHandler
+                0x00000000080033e0                USART2_IRQHandler
+                0x00000000080033e0                I2C2_ER_IRQHandler
+                0x00000000080033e0                DMA1_Channel2_IRQHandler
+                0x00000000080033e0                FLASH_IRQHandler
+                0x00000000080033e0                USART1_IRQHandler
+                0x00000000080033e0                SPI3_IRQHandler
+                0x00000000080033e0                I2C1_ER_IRQHandler
+                0x00000000080033e0                DMA2_Channel3_IRQHandler
+ *fill*         0x00000000080033e2        0x2 
  .text.__libc_init_array
-                0x0000000008003328       0x48 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-init.o)
-                0x0000000008003328                __libc_init_array
- .text.__itoa   0x0000000008003370       0x30 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-itoa.o)
-                0x0000000008003370                __itoa
- .text.itoa     0x00000000080033a0        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-itoa.o)
-                0x00000000080033a0                itoa
- .text.malloc   0x00000000080033a4       0x10 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-malloc.o)
-                0x00000000080033a4                malloc
- .text.memset   0x00000000080033b4       0x10 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-memset.o)
-                0x00000000080033b4                memset
+                0x00000000080033e4       0x48 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-init.o)
+                0x00000000080033e4                __libc_init_array
+ .text.__itoa   0x000000000800342c       0x30 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-itoa.o)
+                0x000000000800342c                __itoa
+ .text.itoa     0x000000000800345c        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-itoa.o)
+                0x000000000800345c                itoa
+ .text.malloc   0x0000000008003460       0x10 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-malloc.o)
+                0x0000000008003460                malloc
+ .text.memset   0x0000000008003470       0x10 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-memset.o)
+                0x0000000008003470                memset
  .text._malloc_r
-                0x00000000080033c4       0xb4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x00000000080033c4                _malloc_r
- .text._sbrk_r  0x0000000008003478       0x20 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-sbrkr.o)
-                0x0000000008003478                _sbrk_r
- .text.__utoa   0x0000000008003498       0x7c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-utoa.o)
-                0x0000000008003498                __utoa
+                0x0000000008003480       0xb4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000008003480                _malloc_r
+ .text._sbrk_r  0x0000000008003534       0x20 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-sbrkr.o)
+                0x0000000008003534                _sbrk_r
+ .text.__utoa   0x0000000008003554       0x7c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-utoa.o)
+                0x0000000008003554                __utoa
  .text.__malloc_lock
-                0x0000000008003514        0x2 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-mlock.o)
-                0x0000000008003514                __malloc_lock
+                0x00000000080035d0        0x2 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-mlock.o)
+                0x00000000080035d0                __malloc_lock
  .text.__malloc_unlock
-                0x0000000008003516        0x2 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-mlock.o)
-                0x0000000008003516                __malloc_unlock
- .text._sbrk    0x0000000008003518       0x1c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libnosys.a(sbrk.o)
-                0x0000000008003518                _sbrk
+                0x00000000080035d2        0x2 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-mlock.o)
+                0x00000000080035d2                __malloc_unlock
+ .text._sbrk    0x00000000080035d4       0x1c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libnosys.a(sbrk.o)
+                0x00000000080035d4                _sbrk
  *(.glue_7)
- .glue_7        0x0000000008003534        0x0 linker stubs
+ .glue_7        0x00000000080035f0        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0000000008003534        0x0 linker stubs
+ .glue_7t       0x00000000080035f0        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0000000008003534        0x0 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
+ .eh_frame      0x00000000080035f0        0x0 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
  *(.init)
- .init          0x0000000008003534        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crti.o
-                0x0000000008003534                _init
- .init          0x0000000008003538        0x8 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtn.o
+ .init          0x00000000080035f0        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crti.o
+                0x00000000080035f0                _init
+ .init          0x00000000080035f4        0x8 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtn.o
  *(.fini)
- .fini          0x0000000008003540        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crti.o
-                0x0000000008003540                _fini
- .fini          0x0000000008003544        0x8 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtn.o
-                0x000000000800354c                . = ALIGN (0x4)
-                0x000000000800354c                _etext = .
+ .fini          0x00000000080035fc        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crti.o
+                0x00000000080035fc                _fini
+ .fini          0x0000000008003600        0x8 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtn.o
+                0x0000000008003608                . = ALIGN (0x4)
+                0x0000000008003608                _etext = .
 
-.vfp11_veneer   0x000000000800354c        0x0
- .vfp11_veneer  0x000000000800354c        0x0 linker stubs
+.vfp11_veneer   0x0000000008003608        0x0
+ .vfp11_veneer  0x0000000008003608        0x0 linker stubs
 
-.v4_bx          0x000000000800354c        0x0
- .v4_bx         0x000000000800354c        0x0 linker stubs
+.v4_bx          0x0000000008003608        0x0
+ .v4_bx         0x0000000008003608        0x0 linker stubs
 
-.iplt           0x000000000800354c        0x0
- .iplt          0x000000000800354c        0x0 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
+.iplt           0x0000000008003608        0x0
+ .iplt          0x0000000008003608        0x0 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
 
-.rodata         0x000000000800354c     0x28bc
-                0x000000000800354c                . = ALIGN (0x4)
+.rodata         0x0000000008003608     0x28c4
+                0x0000000008003608                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x000000000800354c     0x2814 Middlewares/Third_Party/SSD1306/fonts.o
- .rodata        0x0000000008005d60        0x8 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
-                0x0000000008005d60                playerBarSprite
- .rodata        0x0000000008005d68       0x14 Src/main.o
- .rodata        0x0000000008005d7c       0x24 Src/system_stm32l1xx.o
-                0x0000000008005d7c                PLLMulTable
-                0x0000000008005d88                AHBPrescTable
-                0x0000000008005d98                APBPrescTable
+ .rodata        0x0000000008003608     0x2814 Middlewares/Third_Party/SSD1306/fonts.o
+ .rodata        0x0000000008005e1c        0x8 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+                0x0000000008005e1c                playerBarSprite
+ .rodata        0x0000000008005e24       0x14 Src/main.o
+ .rodata        0x0000000008005e38       0x24 Src/system_stm32l1xx.o
+                0x0000000008005e38                PLLMulTable
+                0x0000000008005e44                AHBPrescTable
+                0x0000000008005e54                APBPrescTable
  *(.rodata*)
  .rodata.str1.4
-                0x0000000008005da0        0x5 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
- *fill*         0x0000000008005da5        0x3 
+                0x0000000008005e5c        0x5 Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+ *fill*         0x0000000008005e61        0x3 
  .rodata.str1.4
-                0x0000000008005da8        0xb Middlewares/Third_Party/Squashy/gamesys/gamesys.o
- *fill*         0x0000000008005db3        0x1 
+                0x0000000008005e64        0xb Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+ *fill*         0x0000000008005e6f        0x1 
  .rodata.str1.4
-                0x0000000008005db4       0x2c Src/main.o
+                0x0000000008005e70       0x34 Src/main.o
  .rodata.__utoa.str1.1
-                0x0000000008005de0       0x25 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-utoa.o)
-                0x0000000008005e08                . = ALIGN (0x4)
- *fill*         0x0000000008005e05        0x3 
+                0x0000000008005ea4       0x25 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-utoa.o)
+                0x0000000008005ecc                . = ALIGN (0x4)
+ *fill*         0x0000000008005ec9        0x3 
 
-.rel.dyn        0x0000000008005e08        0x0
- .rel.iplt      0x0000000008005e08        0x0 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
+.rel.dyn        0x0000000008005ecc        0x0
+ .rel.iplt      0x0000000008005ecc        0x0 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x0000000008005e08        0x0
-                0x0000000008005e08                __exidx_start = .
+.ARM            0x0000000008005ecc        0x0
+                0x0000000008005ecc                __exidx_start = .
  *(.ARM.exidx*)
-                0x0000000008005e08                __exidx_end = .
+                0x0000000008005ecc                __exidx_end = .
 
-.preinit_array  0x0000000008005e08        0x0
-                0x0000000008005e08                PROVIDE (__preinit_array_start, .)
+.preinit_array  0x0000000008005ecc        0x0
+                0x0000000008005ecc                PROVIDE (__preinit_array_start, .)
  *(.preinit_array*)
-                0x0000000008005e08                PROVIDE (__preinit_array_end, .)
+                0x0000000008005ecc                PROVIDE (__preinit_array_end, .)
 
-.init_array     0x0000000008005e08        0x4
-                0x0000000008005e08                PROVIDE (__init_array_start, .)
+.init_array     0x0000000008005ecc        0x4
+                0x0000000008005ecc                PROVIDE (__init_array_start, .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x0000000008005e08        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
-                0x0000000008005e0c                PROVIDE (__init_array_end, .)
+ .init_array    0x0000000008005ecc        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
+                0x0000000008005ed0                PROVIDE (__init_array_end, .)
 
-.fini_array     0x0000000008005e0c        0x4
+.fini_array     0x0000000008005ed0        0x4
                 [!provide]                        PROVIDE (__fini_array_start, .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x0000000008005e0c        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
+ .fini_array    0x0000000008005ed0        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
                 [!provide]                        PROVIDE (__fini_array_end, .)
-                0x0000000008005e10                _sidata = LOADADDR (.data)
+                0x0000000008005ed4                _sidata = LOADADDR (.data)
 
-.data           0x0000000020000000       0x84 load address 0x0000000008005e10
+.data           0x0000000020000000       0x88 load address 0x0000000008005ed4
                 0x0000000020000000                . = ALIGN (0x4)
                 0x0000000020000000                _sdata = .
  *(.data)
@@ -5314,76 +5321,78 @@ LOAD /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.l
                 0x0000000020000004                Font_16x26
                 0x000000002000000c                Font_11x18
                 0x0000000020000014                Font_7x10
- .data          0x000000002000001c        0x4 Src/system_stm32l1xx.o
-                0x000000002000001c                SystemCoreClock
+ .data          0x000000002000001c        0x4 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x000000002000001c                ballSpeed
+ .data          0x0000000020000020        0x4 Src/system_stm32l1xx.o
+                0x0000000020000020                SystemCoreClock
  *(.data*)
  .data._impure_ptr
-                0x0000000020000020        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-impure.o)
-                0x0000000020000020                _impure_ptr
+                0x0000000020000024        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-impure.o)
+                0x0000000020000024                _impure_ptr
  .data.impure_data
-                0x0000000020000024       0x60 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-impure.o)
-                0x0000000020000084                . = ALIGN (0x4)
-                0x0000000020000084                _edata = .
+                0x0000000020000028       0x60 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-impure.o)
+                0x0000000020000088                . = ALIGN (0x4)
+                0x0000000020000088                _edata = .
 
-.igot.plt       0x0000000020000084        0x0 load address 0x0000000008005e94
- .igot.plt      0x0000000020000084        0x0 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
-                0x0000000020000084                . = ALIGN (0x4)
+.igot.plt       0x0000000020000088        0x0 load address 0x0000000008005f5c
+ .igot.plt      0x0000000020000088        0x0 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
+                0x0000000020000088                . = ALIGN (0x4)
 
-.bss            0x0000000020000084     0x1280 load address 0x0000000008005e94
-                0x0000000020000084                _sbss = .
-                0x0000000020000084                __bss_start__ = _sbss
+.bss            0x0000000020000088     0x1288 load address 0x0000000008005f5c
+                0x0000000020000088                _sbss = .
+                0x0000000020000088                __bss_start__ = _sbss
  *(.bss)
- .bss           0x0000000020000084       0x1c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
- .bss           0x00000000200000a0      0x12c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
-                0x00000000200001a0                pxCurrentTCB
- .bss           0x00000000200001cc        0x8 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
- .bss           0x00000000200001d4      0xc18 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
- .bss           0x0000000020000dec      0x406 Middlewares/Third_Party/SSD1306/ssd1306.o
- *fill*         0x00000000200011f2        0x2 
- .bss           0x00000000200011f4       0x10 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x00000000200011f4                score
-                0x00000000200011f8                gameover
+ .bss           0x0000000020000088       0x1c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtbegin.o
+ .bss           0x00000000200000a4      0x12c Middlewares/Third_Party/FreeRTOS/Source/tasks.o
+                0x00000000200001a4                pxCurrentTCB
+ .bss           0x00000000200001d0        0x8 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
+ .bss           0x00000000200001d8      0xc18 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
+ .bss           0x0000000020000df0      0x406 Middlewares/Third_Party/SSD1306/ssd1306.o
+ *fill*         0x00000000200011f6        0x2 
+ .bss           0x00000000200011f8       0x18 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x00000000200011f8                score
+                0x00000000200011fc                beep
+                0x0000000020001204                gameover
  *(.bss*)
  .bss.__malloc_free_list
-                0x0000000020001204        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000020001204                __malloc_free_list
+                0x0000000020001210        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020001210                __malloc_free_list
  .bss.__malloc_sbrk_start
-                0x0000000020001208        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-nano-mallocr.o)
-                0x0000000020001208                __malloc_sbrk_start
+                0x0000000020001214        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-nano-mallocr.o)
+                0x0000000020001214                __malloc_sbrk_start
  .bss.heap_end.4102
-                0x000000002000120c        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libnosys.a(sbrk.o)
+                0x0000000020001218        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libnosys.a(sbrk.o)
  *(COMMON)
- COMMON         0x0000000020001210        0x4 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
-                0x0000000020001210                uwTick
- COMMON         0x0000000020001214        0xc Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                0x0000000020001214                lHead
-                0x0000000020001218                player1
-                0x000000002000121c                ball1
- COMMON         0x0000000020001220       0x10 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
-                0x0000000020001220                playerBar
-                0x0000000020001228                ball
- COMMON         0x0000000020001230       0xd0 Src/main.o
-                0x0000000020001230                defaultTaskHandle
-                0x0000000020001234                hi2c1
-                0x0000000020001288                htim3
-                0x00000000200012c0                huart2
- COMMON         0x0000000020001300        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-reent.o)
-                0x0000000020001300                errno
-                0x0000000020001304                . = ALIGN (0x4)
-                0x0000000020001304                _ebss = .
-                0x0000000020001304                __bss_end__ = _ebss
+ COMMON         0x000000002000121c        0x4 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
+                0x000000002000121c                uwTick
+ COMMON         0x0000000020001220        0xc Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000020001220                lHead
+                0x0000000020001224                player1
+                0x0000000020001228                ball1
+ COMMON         0x000000002000122c       0x10 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+                0x000000002000122c                playerBar
+                0x0000000020001234                ball
+ COMMON         0x000000002000123c       0xd0 Src/main.o
+                0x000000002000123c                defaultTaskHandle
+                0x0000000020001240                hi2c1
+                0x0000000020001294                htim3
+                0x00000000200012cc                huart2
+ COMMON         0x000000002000130c        0x4 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-reent.o)
+                0x000000002000130c                errno
+                0x0000000020001310                . = ALIGN (0x4)
+                0x0000000020001310                _ebss = .
+                0x0000000020001310                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x0000000020001304      0x604 load address 0x0000000008005e94
-                0x0000000020001308                . = ALIGN (0x8)
- *fill*         0x0000000020001304        0x4 
-                0x0000000020001308                PROVIDE (end, .)
+                0x0000000020001310      0x600 load address 0x0000000008005f5c
+                0x0000000020001310                . = ALIGN (0x8)
+                0x0000000020001310                PROVIDE (end, .)
                 [!provide]                        PROVIDE (_end, .)
-                0x0000000020001508                . = (. + _Min_Heap_Size)
- *fill*         0x0000000020001308      0x200 
-                0x0000000020001908                . = (. + _Min_Stack_Size)
- *fill*         0x0000000020001508      0x400 
-                0x0000000020001908                . = ALIGN (0x8)
+                0x0000000020001510                . = (. + _Min_Heap_Size)
+ *fill*         0x0000000020001310      0x200 
+                0x0000000020001910                . = (. + _Min_Stack_Size)
+ *fill*         0x0000000020001510      0x400 
+                0x0000000020001910                . = ALIGN (0x8)
 
 /DISCARD/
  libc.a(*)
@@ -5467,7 +5476,7 @@ LOAD /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.l
                 0x0000000000000689       0x1d /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7-m/crtn.o
 OUTPUT(NucleoSquashy.elf elf32-littlearm)
 
-.debug_info     0x0000000000000000    0x1e45f
+.debug_info     0x0000000000000000    0x1e572
  .debug_info    0x0000000000000000      0xed6 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
  .debug_info    0x0000000000000ed6     0x16e4 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .debug_info    0x00000000000025ba      0xea7 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
@@ -5483,13 +5492,13 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_info    0x0000000000014313      0xc71 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_info    0x0000000000014f84      0xa6d Middlewares/Third_Party/SSD1306/fonts.o
  .debug_info    0x00000000000159f1     0x1412 Middlewares/Third_Party/SSD1306/ssd1306.o
- .debug_info    0x0000000000016e03     0x1637 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
- .debug_info    0x000000000001843a     0x109e Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
- .debug_info    0x00000000000194d8     0x2051 Src/main.o
- .debug_info    0x000000000001b529     0x189c Src/stm32l1xx_hal_msp.o
- .debug_info    0x000000000001cdc5      0xa02 Src/stm32l1xx_it.o
- .debug_info    0x000000000001d7c7      0xc76 Src/system_stm32l1xx.o
- .debug_info    0x000000000001e43d       0x22 startup/startup_stm32l152xe.o
+ .debug_info    0x0000000000016e03     0x16ba Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+ .debug_info    0x00000000000184bd     0x109e Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+ .debug_info    0x000000000001955b     0x20e1 Src/main.o
+ .debug_info    0x000000000001b63c     0x189c Src/stm32l1xx_hal_msp.o
+ .debug_info    0x000000000001ced8      0xa02 Src/stm32l1xx_it.o
+ .debug_info    0x000000000001d8da      0xc76 Src/system_stm32l1xx.o
+ .debug_info    0x000000000001e550       0x22 startup/startup_stm32l152xe.o
 
 .debug_abbrev   0x0000000000000000     0x3980
  .debug_abbrev  0x0000000000000000      0x2c9 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
@@ -5515,7 +5524,7 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_abbrev  0x0000000000003769      0x205 Src/system_stm32l1xx.o
  .debug_abbrev  0x000000000000396e       0x12 startup/startup_stm32l152xe.o
 
-.debug_loc      0x0000000000000000     0xb2b5
+.debug_loc      0x0000000000000000     0xb2d6
  .debug_loc     0x0000000000000000       0x6a Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
  .debug_loc     0x000000000000006a      0x5ce Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .debug_loc     0x0000000000000638      0x38d Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
@@ -5532,11 +5541,11 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_loc     0x000000000000ab66      0x23b Middlewares/Third_Party/SSD1306/ssd1306.o
  .debug_loc     0x000000000000ada1       0x60 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
  .debug_loc     0x000000000000ae01      0x15e Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
- .debug_loc     0x000000000000af5f       0xa5 Src/main.o
- .debug_loc     0x000000000000b004      0x122 Src/stm32l1xx_hal_msp.o
- .debug_loc     0x000000000000b126      0x18f Src/system_stm32l1xx.o
+ .debug_loc     0x000000000000af5f       0xc6 Src/main.o
+ .debug_loc     0x000000000000b025      0x122 Src/stm32l1xx_hal_msp.o
+ .debug_loc     0x000000000000b147      0x18f Src/system_stm32l1xx.o
 
-.debug_aranges  0x0000000000000000     0x1068
+.debug_aranges  0x0000000000000000     0x1078
  .debug_aranges
                 0x0000000000000000       0xb0 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
  .debug_aranges
@@ -5568,21 +5577,21 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_aranges
                 0x0000000000000e10       0x58 Middlewares/Third_Party/SSD1306/ssd1306.o
  .debug_aranges
-                0x0000000000000e68       0x58 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                0x0000000000000e68       0x60 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
  .debug_aranges
-                0x0000000000000ec0       0x28 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+                0x0000000000000ec8       0x28 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
  .debug_aranges
-                0x0000000000000ee8       0x88 Src/main.o
+                0x0000000000000ef0       0x90 Src/main.o
  .debug_aranges
-                0x0000000000000f70       0x58 Src/stm32l1xx_hal_msp.o
+                0x0000000000000f80       0x58 Src/stm32l1xx_hal_msp.o
  .debug_aranges
-                0x0000000000000fc8       0x50 Src/stm32l1xx_it.o
+                0x0000000000000fd8       0x50 Src/stm32l1xx_it.o
  .debug_aranges
-                0x0000000000001018       0x28 Src/system_stm32l1xx.o
+                0x0000000000001028       0x28 Src/system_stm32l1xx.o
  .debug_aranges
-                0x0000000000001040       0x28 startup/startup_stm32l152xe.o
+                0x0000000000001050       0x28 startup/startup_stm32l152xe.o
 
-.debug_ranges   0x0000000000000000     0x1038
+.debug_ranges   0x0000000000000000     0x1048
  .debug_ranges  0x0000000000000000       0xa0 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
  .debug_ranges  0x00000000000000a0       0xf8 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .debug_ranges  0x0000000000000198       0x48 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
@@ -5597,13 +5606,13 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_ranges  0x0000000000000d68       0x68 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_ranges  0x0000000000000dd0       0x40 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_ranges  0x0000000000000e10       0x48 Middlewares/Third_Party/SSD1306/ssd1306.o
- .debug_ranges  0x0000000000000e58       0x48 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
- .debug_ranges  0x0000000000000ea0       0x60 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
- .debug_ranges  0x0000000000000f00       0x78 Src/main.o
- .debug_ranges  0x0000000000000f78       0x48 Src/stm32l1xx_hal_msp.o
- .debug_ranges  0x0000000000000fc0       0x40 Src/stm32l1xx_it.o
- .debug_ranges  0x0000000000001000       0x18 Src/system_stm32l1xx.o
- .debug_ranges  0x0000000000001018       0x20 startup/startup_stm32l152xe.o
+ .debug_ranges  0x0000000000000e58       0x50 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+ .debug_ranges  0x0000000000000ea8       0x60 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+ .debug_ranges  0x0000000000000f08       0x80 Src/main.o
+ .debug_ranges  0x0000000000000f88       0x48 Src/stm32l1xx_hal_msp.o
+ .debug_ranges  0x0000000000000fd0       0x40 Src/stm32l1xx_it.o
+ .debug_ranges  0x0000000000001010       0x18 Src/system_stm32l1xx.o
+ .debug_ranges  0x0000000000001028       0x20 startup/startup_stm32l152xe.o
 
 .debug_macro    0x0000000000000000    0x19943
  .debug_macro   0x0000000000000000      0x317 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
@@ -5708,7 +5717,7 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_macro   0x000000000001928a      0x3c0 Src/stm32l1xx_it.o
  .debug_macro   0x000000000001964a      0x2f9 Src/system_stm32l1xx.o
 
-.debug_line     0x0000000000000000     0xe5f7
+.debug_line     0x0000000000000000     0xe634
  .debug_line    0x0000000000000000      0x915 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
  .debug_line    0x0000000000000915      0x9f1 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .debug_line    0x0000000000001306      0x92f Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
@@ -5724,15 +5733,15 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_line    0x00000000000095a5      0x637 Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_line    0x0000000000009bdc      0x7fe Middlewares/Third_Party/SSD1306/fonts.o
  .debug_line    0x000000000000a3da      0x93c Middlewares/Third_Party/SSD1306/ssd1306.o
- .debug_line    0x000000000000ad16      0x973 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
- .debug_line    0x000000000000b689      0x895 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
- .debug_line    0x000000000000bf1e      0xc04 Src/main.o
- .debug_line    0x000000000000cb22      0x875 Src/stm32l1xx_hal_msp.o
- .debug_line    0x000000000000d397      0xa05 Src/stm32l1xx_it.o
- .debug_line    0x000000000000dd9c      0x7de Src/system_stm32l1xx.o
- .debug_line    0x000000000000e57a       0x7d startup/startup_stm32l152xe.o
+ .debug_line    0x000000000000ad16      0x995 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+ .debug_line    0x000000000000b6ab      0x895 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+ .debug_line    0x000000000000bf40      0xc1f Src/main.o
+ .debug_line    0x000000000000cb5f      0x875 Src/stm32l1xx_hal_msp.o
+ .debug_line    0x000000000000d3d4      0xa05 Src/stm32l1xx_it.o
+ .debug_line    0x000000000000ddd9      0x7de Src/system_stm32l1xx.o
+ .debug_line    0x000000000000e5b7       0x7d startup/startup_stm32l152xe.o
 
-.debug_str      0x0000000000000000    0x94d6c
+.debug_str      0x0000000000000000    0x94d9c
  .debug_str     0x0000000000000000    0x89eb4 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
                                       0x8a257 (size before relaxing)
  .debug_str     0x0000000000089eb4      0x3d0 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
@@ -5763,19 +5772,19 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
                                       0x89b6c (size before relaxing)
  .debug_str     0x0000000000094617      0x18a Middlewares/Third_Party/SSD1306/ssd1306.o
                                       0x8a126 (size before relaxing)
- .debug_str     0x00000000000947a1      0x187 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                                      0x8a4ee (size before relaxing)
- .debug_str     0x0000000000094928       0x61 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+ .debug_str     0x00000000000947a1      0x1ac Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                                      0x8a536 (size before relaxing)
+ .debug_str     0x000000000009494d       0x61 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
                                       0x8a0c8 (size before relaxing)
- .debug_str     0x0000000000094989      0x280 Src/main.o
-                                      0x8feca (size before relaxing)
- .debug_str     0x0000000000094c09       0x24 Src/stm32l1xx_hal_msp.o
+ .debug_str     0x00000000000949ae      0x28b Src/main.o
+                                      0x8fee2 (size before relaxing)
+ .debug_str     0x0000000000094c39       0x24 Src/stm32l1xx_hal_msp.o
                                       0x8a8a8 (size before relaxing)
- .debug_str     0x0000000000094c2d       0x9d Src/stm32l1xx_it.o
+ .debug_str     0x0000000000094c5d       0x9d Src/stm32l1xx_it.o
                                       0x8ee9f (size before relaxing)
- .debug_str     0x0000000000094cca       0x72 Src/system_stm32l1xx.o
+ .debug_str     0x0000000000094cfa       0x72 Src/system_stm32l1xx.o
                                       0x89bfc (size before relaxing)
- .debug_str     0x0000000000094d3c       0x30 startup/startup_stm32l152xe.o
+ .debug_str     0x0000000000094d6c       0x30 startup/startup_stm32l152xe.o
                                          0x5a (size before relaxing)
 
 .comment        0x0000000000000000       0x7e
@@ -5802,7 +5811,7 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .comment       0x000000000000007e       0x7f Src/stm32l1xx_it.o
  .comment       0x000000000000007e       0x7f Src/system_stm32l1xx.o
 
-.debug_frame    0x0000000000000000     0x2e74
+.debug_frame    0x0000000000000000     0x2ea4
  .debug_frame   0x0000000000000000      0x168 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
  .debug_frame   0x0000000000000168      0x15c Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
  .debug_frame   0x00000000000002c4       0xec Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_gpio.o
@@ -5817,19 +5826,19 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_frame   0x00000000000025c8       0xe0 Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/port.o
  .debug_frame   0x00000000000026a8       0xac Middlewares/Third_Party/FreeRTOS/Source/portable/MemMang/heap_4.o
  .debug_frame   0x0000000000002754       0xe8 Middlewares/Third_Party/SSD1306/ssd1306.o
- .debug_frame   0x000000000000283c       0xd0 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
- .debug_frame   0x000000000000290c       0x54 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
- .debug_frame   0x0000000000002960      0x178 Src/main.o
- .debug_frame   0x0000000000002ad8       0xe4 Src/stm32l1xx_hal_msp.o
- .debug_frame   0x0000000000002bbc       0x88 Src/stm32l1xx_it.o
- .debug_frame   0x0000000000002c44       0x30 Src/system_stm32l1xx.o
- .debug_frame   0x0000000000002c74       0x2c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-init.o)
- .debug_frame   0x0000000000002ca0       0x38 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-itoa.o)
- .debug_frame   0x0000000000002cd8       0x30 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-malloc.o)
- .debug_frame   0x0000000000002d08       0x20 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-memset.o)
- .debug_frame   0x0000000000002d28       0x2c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-nano-mallocr.o)
- .debug_frame   0x0000000000002d54       0x2c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-sbrkr.o)
- .debug_frame   0x0000000000002d80       0x48 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-utoa.o)
- .debug_frame   0x0000000000002dc8       0x30 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-mlock.o)
- .debug_frame   0x0000000000002df8       0x5c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-reent.o)
- .debug_frame   0x0000000000002e54       0x20 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libnosys.a(sbrk.o)
+ .debug_frame   0x000000000000283c       0xe8 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+ .debug_frame   0x0000000000002924       0x54 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+ .debug_frame   0x0000000000002978      0x190 Src/main.o
+ .debug_frame   0x0000000000002b08       0xe4 Src/stm32l1xx_hal_msp.o
+ .debug_frame   0x0000000000002bec       0x88 Src/stm32l1xx_it.o
+ .debug_frame   0x0000000000002c74       0x30 Src/system_stm32l1xx.o
+ .debug_frame   0x0000000000002ca4       0x2c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-init.o)
+ .debug_frame   0x0000000000002cd0       0x38 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-itoa.o)
+ .debug_frame   0x0000000000002d08       0x30 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-malloc.o)
+ .debug_frame   0x0000000000002d38       0x20 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-memset.o)
+ .debug_frame   0x0000000000002d58       0x2c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-nano-mallocr.o)
+ .debug_frame   0x0000000000002d84       0x2c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-sbrkr.o)
+ .debug_frame   0x0000000000002db0       0x48 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-utoa.o)
+ .debug_frame   0x0000000000002df8       0x30 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-mlock.o)
+ .debug_frame   0x0000000000002e28       0x5c /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libc_nano.a(lib_a-reent.o)
+ .debug_frame   0x0000000000002e84       0x20 /home/gecko/Ac6/SystemWorkbench/plugins/fr.ac6.mcu.externaltools.arm-none.linux64_1.16.0.201807130628/tools/compiler/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7-m/libnosys.a(sbrk.o)
