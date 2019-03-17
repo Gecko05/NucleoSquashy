@@ -4,9 +4,44 @@ Link lHead;
 int gameover = 0;
 int score = 0;
 int beep = 0;
-int ballSpeed = 1;
+int padSpeed = 0;
+int prevCollision = 0;
+// Ball Directions
+int ballx = 0;
+int bally = 0;
 extern TIM_HandleTypeDef htim3;
+//Edge CollisionEdge;
 
+// Check if there's a collision on the edges of the screen
+Edge checkEdgeCollision(BodyNode body){
+	if (body->y <= 0){
+		return TOP_EDGE;
+	}
+	else if (body->y >= 64 - HEIGHT(body)){
+		return BOTTOM_EDGE;
+	}
+	if (body->x <= 0){
+		return LEFT_EDGE;
+	}
+	else if (body->x >= 128 - WIDTH(body)){
+		return RIGHT_EDGE;
+	}
+	return NO_EDGE;
+}
+
+// Check if there's a collision between body1 and body2, relative to body1
+int checkCollision(BodyNode body1, BodyNode body2){
+	int xDistance = body2->x - body1->x;
+	int yDistance = body2->y - body1->y;
+	if ((xDistance < 0 && abs(xDistance) < WIDTH(body2)) || (xDistance > 0 && xDistance < WIDTH(body1)) || (xDistance == 0)){
+		if ((yDistance < 0 && abs(yDistance) < HEIGHT(body2)) || (yDistance > 0 && yDistance < HEIGHT(body1)) || (yDistance == 0)){
+				return 1;
+			}
+	}
+	return 0;
+}
+
+// Display score
 void displayScore(void){
 	ssd1306_SetCursor(1,1);
 	char scoreString[4];
@@ -14,12 +49,14 @@ void displayScore(void){
 	ssd1306_WriteString(scoreString, Font_11x18, White);
 }
 
+// Display game over screen
 void displayGameOverScreen(void){
 	ssd1306_Fill(Black);
 	ssd1306_SetCursor(2,23);
 	ssd1306_WriteString(" Game Over", Font_11x18, White);
 }
 
+// Create the beep output
 void vOutputAudio(void){
 	static int countBeep = 0;
 	if (beep){
@@ -33,14 +70,17 @@ void vOutputAudio(void){
 	}
 }
 
+// Draw a game item
 void drawItem(Link gameItem){
 	draw_sprite(gameItem->item->x, gameItem->item->y, gameItem->item->sprite);
 }
 
-void vInitList(void){
+// Initiate the draw list
+void initList(void){
 	lHead = NULL;
 }
 
+// Append a new bodyNode to the draw list
 void appendToGameList(BodyNode newNode){
 	Link t = malloc(sizeof(*t));
 	t->next = lHead;
@@ -48,33 +88,28 @@ void appendToGameList(BodyNode newNode){
 	lHead = t;
 }
 
-void vInitSys(void){
-	vInitList();
-	playerBar.width = 16;
-	playerBar.height = 4;
-	playerBar.spriteContent = playerBarSprite;
-	player1 = malloc(sizeof(*player1));
-	player1->sprite = playerBar;
-	player1->x = 56;
-	player1->y = 55;
-	appendToGameList(player1);
-
-	ball.width = 4;
-	ball.height = 4;
-	ball.spriteContent = playerBarSprite;
-	ball1 = malloc(sizeof(*ball1));
-	ball1->sprite = ball;
-	ball1->x = 58;
-	ball1->y = 30;
-	appendToGameList(ball1);
-
-	//bodyNode player = vCreateObj();
+// Initialize and allocate memory for a new game object
+void initGameObject(Sprite *gameSprite, const uint16_t *spriteFile, BodyNode *gameBody, int width, int height, int xPos, int yPos){
+	gameSprite->width = width;
+	gameSprite->height = height;
+	gameSprite->spriteContent = spriteFile;
+	(*gameBody) = malloc(sizeof(**gameBody));
+	(*gameBody)->sprite = *gameSprite;
+	(*gameBody)->x = xPos;
+	(*gameBody)->y = yPos;
+	appendToGameList(*gameBody);
 }
 
-void vUpdate(void){
-	static int ballx = 0;
-	static int bally = 0;
+// Initiate the squashy game system
+void vInitSys(void){
+	initList();
+	initGameObject(&playerBar, playerBarSprite, &player1, 16, 4, 56, 55);
+	initGameObject(&ball, playerBarSprite, &ball1, 4, 4, 58, 30);
+}
 
+// Run game mechanics
+void vUpdate(void){
+  // Check if the game has finished
 	if (gameover){
 		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10) == GPIO_PIN_SET &&
 				HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == GPIO_PIN_SET){
@@ -85,48 +120,78 @@ void vUpdate(void){
 		}
 		return;
 	}
-	if (((ball1->x - player1->x) <= player1->sprite.width) && ((ball1->x - player1->x) > -ball1->sprite.width) && !bally){
-		if (abs(ball1->y - player1->y) <= player1->sprite.height){
-			bally = 1;
+	// Check collision between the bar and the ball
+	if (checkCollision(player1, ball1)){
+		if(!prevCollision){
+			bally = -1;
 			score++;
 			beep = 1;
+			prevCollision = 1;
 		}
 	}
-
-	if (!ballx && (ball1->x <= (128 - ball1->sprite.width - ballSpeed))){
-		ball1->x += ballSpeed;
+	else{
+		prevCollision = 0;
+	}
+	// Check collision between the ball and the screen edges
+	Edge Collision = checkEdgeCollision(ball1);
+	switch(Collision){
+		case TOP_EDGE:
+			bally = 1;
+			break;
+		case BOTTOM_EDGE:
+			gameover = 1;
+			bally = -1;
+			break;
+		case LEFT_EDGE:
+			ballx = 1;
+			break;
+		case RIGHT_EDGE:
+			ballx = -1;
+			break;
+		default:
+			break;
+	}
+	// Move the ball
+	if (bally > 0){
+		ball1->y++;
 	}
 	else{
-		ballx = 1;
+		ball1->y--;
 	}
-	if (ballx && (ball1->x >= ballSpeed)){
-			ball1->x -= ballSpeed;
-	}
-	else{
-		ballx = 0;
-	}
-
-	if (!bally && (ball1->y <= 60 - ballSpeed)){
-		ball1->y += ballSpeed;
-	}
-	else if (ball1->y >= 60){
-		gameover = 1;
-	}
-	if (bally && (ball1->y >= ballSpeed)){
-			ball1->y -= ballSpeed;
+	if (ballx > 0){
+		ball1->x++;
 	}
 	else{
-			bally = 0;
+		ball1->x--;
 	}
-	//handleEvents
-	if ((HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10) == GPIO_PIN_SET) && (player1->x < (128 - (player1->sprite.width)))){
-		(player1->x)++;
+	// Handle Inputs to change the pad's speed
+	if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10) == GPIO_PIN_SET){
+		if (padSpeed < MAX_SPEED){
+			padSpeed++;
+		}
 	}
-	if ((HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == GPIO_PIN_SET) && (player1->x > 0)){
-		(player1->x)--;
+	else{
+		if (padSpeed > 0){
+			padSpeed--;
+		}
+	}
+	if (HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == GPIO_PIN_SET){
+		if (padSpeed > -MAX_SPEED){
+			padSpeed--;
+		}
+	}
+	else{
+		if (padSpeed < 0){
+			padSpeed++;
+		}
+	}
+	// Check collision between the pad and the screen and move the pad
+	if (!((checkEdgeCollision(player1) == LEFT_EDGE && padSpeed < 0) || (checkEdgeCollision(player1) == RIGHT_EDGE && padSpeed > 0))){
+		player1->x += padSpeed;
 	}
 }
 
+// Draw every element of the UI on the screen
 void vDraw(void){
 	if (gameover){
 		displayGameOverScreen();

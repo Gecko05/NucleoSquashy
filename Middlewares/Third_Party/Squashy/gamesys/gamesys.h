@@ -6,7 +6,19 @@
 #include "gameobject.h"
 #include "stdlib.h"
 
+#define WIDTH(x) x->sprite.width
+#define HEIGHT(x) x->sprite.height
+#define MAX_SPEED 3
+
 typedef struct node_t* Link;
+
+typedef enum edge{
+	NO_EDGE,
+	TOP_EDGE,
+	BOTTOM_EDGE,
+	LEFT_EDGE,
+	RIGHT_EDGE
+}Edge;
 
 struct node_t{
 	BodyNode item;

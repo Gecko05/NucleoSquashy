@@ -3,7 +3,7 @@
 
 #include "sprite_rendering.h"
 #include <stdint.h>
-typedef uint8_t coordinate_t;
+typedef int coordinate_t;
 
 typedef struct body_t* BodyNode;
 
