@@ -7,6 +7,7 @@ const uint16_t playerBarSprite[] = {
 Sprite playerBar;
 Sprite ball;
 
+// Draw a single sprite
 void draw_sprite(uint8_t x, uint8_t y, Sprite spriteToDraw)
 {
 	for (int i = 0; i < spriteToDraw.height; i++){

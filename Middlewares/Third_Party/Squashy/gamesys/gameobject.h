@@ -13,10 +13,6 @@ typedef struct body_t{
 	Sprite sprite;
 } Body;
 
-/*
- *	#######################################################
- */
-
 BodyNode vCreateObj(spriteArray spriteArray);
 
 #endif // GAMEOBJECT_H

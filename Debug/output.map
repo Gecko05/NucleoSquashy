@@ -4246,7 +4246,7 @@ Discarded input sections
  .debug_macro   0x0000000000000000       0x35 Src/main.o
  .debug_macro   0x0000000000000000       0x16 Src/main.o
  .debug_macro   0x0000000000000000       0x29 Src/main.o
- .debug_macro   0x0000000000000000       0x10 Src/main.o
+ .debug_macro   0x0000000000000000       0x16 Src/main.o
  .group         0x0000000000000000        0xc Src/stm32l1xx_hal_msp.o
  .group         0x0000000000000000        0xc Src/stm32l1xx_hal_msp.o
  .group         0x0000000000000000        0xc Src/stm32l1xx_hal_msp.o
@@ -5630,7 +5630,7 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_ranges  0x0000000000001028       0x18 Src/system_stm32l1xx.o
  .debug_ranges  0x0000000000001040       0x20 startup/startup_stm32l152xe.o
 
-.debug_macro    0x0000000000000000    0x1995d
+.debug_macro    0x0000000000000000    0x19963
  .debug_macro   0x0000000000000000      0x317 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
  .debug_macro   0x0000000000000317      0xa60 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
  .debug_macro   0x0000000000000d77       0x94 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
@@ -5726,13 +5726,13 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_macro   0x00000000000180ed      0x306 Middlewares/Third_Party/SSD1306/ssd1306.o
  .debug_macro   0x00000000000183f3       0x22 Middlewares/Third_Party/SSD1306/ssd1306.o
  .debug_macro   0x0000000000018415      0x365 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
- .debug_macro   0x000000000001877a       0x10 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
- .debug_macro   0x000000000001878a      0x310 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
- .debug_macro   0x0000000000018a9a      0x430 Src/main.o
- .debug_macro   0x0000000000018eca       0xd8 Src/main.o
- .debug_macro   0x0000000000018fa2      0x302 Src/stm32l1xx_hal_msp.o
- .debug_macro   0x00000000000192a4      0x3c0 Src/stm32l1xx_it.o
- .debug_macro   0x0000000000019664      0x2f9 Src/system_stm32l1xx.o
+ .debug_macro   0x000000000001877a       0x16 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+ .debug_macro   0x0000000000018790      0x310 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+ .debug_macro   0x0000000000018aa0      0x430 Src/main.o
+ .debug_macro   0x0000000000018ed0       0xd8 Src/main.o
+ .debug_macro   0x0000000000018fa8      0x302 Src/stm32l1xx_hal_msp.o
+ .debug_macro   0x00000000000192aa      0x3c0 Src/stm32l1xx_it.o
+ .debug_macro   0x000000000001966a      0x2f9 Src/system_stm32l1xx.o
 
 .debug_line     0x0000000000000000     0xe694
  .debug_line    0x0000000000000000      0x915 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
@@ -5758,7 +5758,7 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
  .debug_line    0x000000000000de39      0x7de Src/system_stm32l1xx.o
  .debug_line    0x000000000000e617       0x7d startup/startup_stm32l152xe.o
 
-.debug_str      0x0000000000000000    0x94e8a
+.debug_str      0x0000000000000000    0x94e96
  .debug_str     0x0000000000000000    0x89eb4 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal.o
                                       0x8a257 (size before relaxing)
  .debug_str     0x0000000000089eb4      0x3d0 Drivers/STM32L1xx_HAL_Driver/Src/stm32l1xx_hal_cortex.o
@@ -5789,19 +5789,19 @@ OUTPUT(NucleoSquashy.elf elf32-littlearm)
                                       0x89b6c (size before relaxing)
  .debug_str     0x0000000000094617      0x18a Middlewares/Third_Party/SSD1306/ssd1306.o
                                       0x8a126 (size before relaxing)
- .debug_str     0x00000000000947a1      0x29a Middlewares/Third_Party/Squashy/gamesys/gamesys.o
-                                      0x8a63b (size before relaxing)
- .debug_str     0x0000000000094a3b       0x61 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
+ .debug_str     0x00000000000947a1      0x2a6 Middlewares/Third_Party/Squashy/gamesys/gamesys.o
+                                      0x8a647 (size before relaxing)
+ .debug_str     0x0000000000094a47       0x61 Middlewares/Third_Party/Squashy/gamesys/sprite_rendering.o
                                       0x8a0c8 (size before relaxing)
- .debug_str     0x0000000000094a9c      0x28b Src/main.o
-                                      0x8ff16 (size before relaxing)
- .debug_str     0x0000000000094d27       0x24 Src/stm32l1xx_hal_msp.o
+ .debug_str     0x0000000000094aa8      0x28b Src/main.o
+                                      0x8ff22 (size before relaxing)
+ .debug_str     0x0000000000094d33       0x24 Src/stm32l1xx_hal_msp.o
                                       0x8a8a8 (size before relaxing)
- .debug_str     0x0000000000094d4b       0x9d Src/stm32l1xx_it.o
+ .debug_str     0x0000000000094d57       0x9d Src/stm32l1xx_it.o
                                       0x8ee9f (size before relaxing)
- .debug_str     0x0000000000094de8       0x72 Src/system_stm32l1xx.o
+ .debug_str     0x0000000000094df4       0x72 Src/system_stm32l1xx.o
                                       0x89bfc (size before relaxing)
- .debug_str     0x0000000000094e5a       0x30 startup/startup_stm32l152xe.o
+ .debug_str     0x0000000000094e66       0x30 startup/startup_stm32l152xe.o
                                          0x5a (size before relaxing)
 
 .comment        0x0000000000000000       0x7e
