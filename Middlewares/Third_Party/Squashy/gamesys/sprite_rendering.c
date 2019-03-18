@@ -4,8 +4,13 @@ const uint16_t playerBarSprite[] = {
 		0xFFFF, 0xFFFF, 0xFFFF, 0xFFFF
 };
 
+const uint16_t heartSprite[] = {
+    0x71C0, 0xFBE0, 0xFFE0, 0xFFE0, 0xFFE0, 0xFFE0, 0x7FC0, 0x2F80, 0x1F00, 0x0E00, 0x0400, 0x0400
+};
+
 Sprite playerBar;
 Sprite ball;
+Sprite lifeHeart;
 
 // Draw a single sprite
 void draw_sprite(uint8_t x, uint8_t y, Sprite spriteToDraw)

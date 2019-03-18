@@ -12,9 +12,11 @@ typedef struct sprite{
 } Sprite;
 
 extern const uint16_t playerBarSprite[];
+extern const uint16_t heartSprite[];
 
 extern Sprite playerBar;
 extern Sprite ball;
+extern Sprite lifeHeart;
 
 void draw_sprite(uint8_t x, uint8_t y, Sprite spriteToDraw);
 

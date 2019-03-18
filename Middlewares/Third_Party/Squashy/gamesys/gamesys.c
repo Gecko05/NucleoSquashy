@@ -6,11 +6,15 @@ int score = 0;
 int beep = 0;
 int padSpeed = 0;
 int prevCollision = 0;
+int lives = MAX_LIVES;
 // Ball Directions
 int ballx = 0;
 int bally = 0;
 extern TIM_HandleTypeDef htim3;
-//Edge CollisionEdge;
+
+BodyNode player1;
+BodyNode ball1;
+BodyNode life[3];
 
 // Check if there's a collision on the edges of the screen
 Edge checkEdgeCollision(BodyNode body){
@@ -72,7 +76,9 @@ void vOutputAudio(void){
 
 // Draw a game item
 void drawItem(Link gameItem){
-	draw_sprite(gameItem->item->x, gameItem->item->y, gameItem->item->sprite);
+    if (gameItem->item->visible){
+      draw_sprite(gameItem->item->x, gameItem->item->y, gameItem->item->sprite);
+    }
 }
 
 // Initiate the draw list
@@ -89,12 +95,13 @@ void appendToGameList(BodyNode newNode){
 }
 
 // Initialize and allocate memory for a new game object
-void initGameObject(Sprite *gameSprite, const uint16_t *spriteFile, BodyNode *gameBody, int width, int height, int xPos, int yPos){
+void initGameObject(Sprite *gameSprite, const uint16_t *spriteFile, BodyNode *gameBody, int width, int height, int xPos, int yPos, int visible){
 	gameSprite->width = width;
 	gameSprite->height = height;
 	gameSprite->spriteContent = spriteFile;
 	(*gameBody) = malloc(sizeof(**gameBody));
 	(*gameBody)->sprite = *gameSprite;
+	(*gameBody)->visible = visible;
 	(*gameBody)->x = xPos;
 	(*gameBody)->y = yPos;
 	appendToGameList(*gameBody);
@@ -103,8 +110,11 @@ void initGameObject(Sprite *gameSprite, const uint16_t *spriteFile, BodyNode *ga
 // Initiate the squashy game system
 void vInitSys(void){
 	initList();
-	initGameObject(&playerBar, playerBarSprite, &player1, 16, 4, 56, 55);
-	initGameObject(&ball, playerBarSprite, &ball1, 4, 4, 58, 30);
+	initGameObject(&playerBar, playerBarSprite, &player1, 16, 4, 56, 55, 1);
+	initGameObject(&ball, playerBarSprite, &ball1, 4, 4, 58, 30, 1);
+	for (int i = 0; i < MAX_LIVES; i++){
+	  initGameObject(&lifeHeart, heartSprite, &life[i], 11, 11, 116 - (i*13), 0, 1);
+	}
 }
 
 // Run game mechanics
@@ -112,11 +122,15 @@ void vUpdate(void){
   // Check if the game has finished
 	if (gameover){
 		if (HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10) == GPIO_PIN_SET &&
-				HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == GPIO_PIN_SET){
-			  gameover = 0;
-			  ball1->x = 60;
-			  ball1->y = 10;
-			  score = 0;
+            HAL_GPIO_ReadPin(GPIOB, GPIO_PIN_3) == GPIO_PIN_SET){   // Start a new game
+            gameover = 0;
+            ball1->x = 60;
+            ball1->y = 10;
+            for (int i = 0; i < MAX_LIVES; i++){
+              life[i]->visible = 1;
+            }
+            lives = MAX_LIVES;
+            score = 0;
 		}
 		return;
 	}
@@ -139,8 +153,14 @@ void vUpdate(void){
 			bally = 1;
 			break;
 		case BOTTOM_EDGE:
-			gameover = 1;
-			bally = -1;
+		    // Lose a life
+		    life[--lives]->visible = 0;
+		    if (lives == 0){
+		      gameover = 1;     //Game over
+		    }
+		    ball1->y = 0;
+		    ball1->x = 62;
+			bally = 1;
 			break;
 		case LEFT_EDGE:
 			ballx = 1;
@@ -201,9 +221,9 @@ void vDraw(void){
 		ssd1306_Fill(Black);
 		displayScore();
 		Link gameItem = lHead;
-		while(gameItem->item != NULL){
-			drawItem(gameItem);
-			if(gameItem->next == NULL){
+		while (gameItem->item != NULL){
+		    drawItem(gameItem);
+			if (gameItem->next == NULL){
 				break;
 			}
 			gameItem = gameItem->next;

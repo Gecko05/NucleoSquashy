@@ -10,6 +10,7 @@ typedef struct body_t* BodyNode;
 typedef struct body_t{
 	coordinate_t x;
 	coordinate_t y;
+	uint8_t visible;
 	Sprite sprite;
 } Body;
 

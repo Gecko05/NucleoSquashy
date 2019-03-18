@@ -9,6 +9,7 @@
 #define WIDTH(x) x->sprite.width
 #define HEIGHT(x) x->sprite.height
 #define MAX_SPEED 3
+#define MAX_LIVES 3
 
 typedef struct node_t* Link;
 
@@ -24,10 +25,6 @@ struct node_t{
 	BodyNode item;
 	Link next;
 };
-
-BodyNode player1;
-
-BodyNode ball1;
 
 void vDraw(void);
 
