@@ -7,7 +7,7 @@ More info at [my github page](https://gecko05.github.io/2019/02/09/nucleo-squash
 ## Hardware
 
 * Nucleo L152RE
-* SSD1306 Display
+* Broken SSD1306 Display
 * Two pushbuttons
 * Piezo buzzer
 
